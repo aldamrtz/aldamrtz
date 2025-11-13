@@ -57,9 +57,9 @@ const experienceData = [
       "Assisted 30+ students in understanding practicum materials and exercises, focusing on Microsoft Word, Excel, and PowerPoint. Provided support by answering questions, facilitating learning during sessions, preparing practicum materials, coordinating with lecturers, and evaluating students’ practicum reports.",
   },
 
-  // Courses
+  // Training
   {
-    type: "Courses",
+    type: "Training",
     position: "Project Management Participant – Google Career Certificate",
     company:
       "Kementerian Komunikasi dan Informatika Republik Indonesia (KOMDIGI)",
@@ -73,7 +73,7 @@ const experienceData = [
       "Currently progressing in the Google Project Management Learning Path at the Intermediate level. The program builds on fundamental project management skills, covering risk management, quality control, digital project tools, and practical application through case studies. It integrates AI essentials to enhance productivity and responsible use of AI in project planning and execution. Focused on applying theory to real-world project scenarios while developing competencies in project initiation, planning, and execution.",
   },
   {
-    type: "Courses",
+    type: "Training",
     position:
       "Full-Stack Developer Participant – Studi Independen Bersertifikat Dicoding x Kampus Merdeka Cycle 5 Program ",
     company: "Dicoding Indonesia (PT Presentologics)",
@@ -84,7 +84,7 @@ const experienceData = [
       "/experience/p1c.png",
     ],
     description:
-      "Completed intensive online courses covering theory, hands-on practice, quizzes, exams, and a capstone project. Gained technical proficiency in Front-End, Back-End, and DevOps through 10+ certification classes, instructor-led sessions, expert mentoring, and consultations. Developed non-technical skills in Growth Mindset, Communication, and Business Presentation, etc. Collaborated on a team project to build a web-based application integrating Front-End, Back-End, and DevOps.",
+      "Completed intensive online training covering theory, hands-on practice, quizzes, exams, and a capstone project. Gained technical proficiency in Front-End, Back-End, and DevOps through 10+ certification classes, instructor-led sessions, expert mentoring, and consultations. Developed non-technical skills in Growth Mindset, Communication, and Business Presentation, etc. Collaborated on a team project to build a web-based application integrating Front-End, Back-End, and DevOps.",
   },
 
   // Organization
@@ -102,7 +102,7 @@ const experienceData = [
 
 export default function ExperienceTimeline() {
   const bulletPositions = [10, 30, 180, 250];
-  const tabs = ["Internship", "Teaching Assistant", "Courses", "Organization"];
+  const tabs = ["Internship", "Teaching Assistant", "Training", "Organization"];
   const [activeTab, setActiveTab] = useState("Internship");
   const [expanded, setExpanded] = useState(
     Array(experienceData.length).fill(false)
