@@ -10,10 +10,17 @@ const certificationsData = [
   // AI
   {
     category: "AI",
-    name: "Artificial Intelligence (Micro Skill)",
+    name: "Discover the Art of Prompting",
     year: "2025",
-    image: "/certifications/ai1.png",
-    link: "https://digitalent.komdigi.go.id/cek-sertifikat#",
+    image: "/certifications/ai5.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/2IAF867MQYX5",
+  },
+  {
+    category: "AI",
+    name: "Maximize Productivity With AI Tools",
+    year: "2025",
+    image: "/certifications/ai3.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/6C3CZE28PYT4",
   },
   {
     category: "AI",
@@ -24,10 +31,10 @@ const certificationsData = [
   },
   {
     category: "AI",
-    name: "Maximize Productivity With AI Tools",
+    name: "Artificial Intelligence (Micro Skill)",
     year: "2025",
-    image: "/certifications/ai3.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/6C3CZE28PYT4",
+    image: "/certifications/ai1.png",
+    link: "https://digitalent.komdigi.go.id/cek-sertifikat#",
   },
   {
     category: "AI",
@@ -53,17 +60,17 @@ const certificationsData = [
   },
   {
     category: "Web Development",
-    name: "Learn to Create Front-End Web for Beginners",
-    year: "2023",
-    image: "/certifications/web3.png",
-    link: "https://www.dicoding.com/certificates/98XWVKQ3LPM3",
-  },
-  {
-    category: "Web Development",
     name: "Learn to Create Back-End Applications for Beginners",
     year: "2023",
     image: "/certifications/web4.png",
     link: "https://www.dicoding.com/certificates/07Z688552XQR",
+  },
+  {
+    category: "Web Development",
+    name: "Learn to Create Front-End Web for Beginners",
+    year: "2023",
+    image: "/certifications/web3.png",
+    link: "https://www.dicoding.com/certificates/98XWVKQ3LPM3",
   },
   {
     category: "Web Development",
@@ -82,17 +89,17 @@ const certificationsData = [
   // Programming
   {
     category: "Programming",
-    name: "Getting Started with Python Programming",
-    year: "2025",
-    image: "/certifications/pro1.png",
-    link: "https://www.dicoding.com/certificates/MRZMN9GVRPYQ",
-  },
-  {
-    category: "Programming",
     name: "Learn Back-End for Beginners with Python",
     year: "2025",
     image: "/certifications/pro2.png",
     link: "https://www.dicoding.com/certificates/81P2L098NZOY",
+  },
+  {
+    category: "Programming",
+    name: "Getting Started with Python Programming",
+    year: "2025",
+    image: "/certifications/pro1.png",
+    link: "https://www.dicoding.com/certificates/MRZMN9GVRPYQ",
   },
   {
     category: "Programming",
@@ -125,20 +132,6 @@ const certificationsData = [
   },
   {
     category: "Cloud & DevOps",
-    name: "Architecting on AWS (Building Cloud Architecture on AWS)",
-    year: "2023",
-    image: "/certifications/cnd2.png",
-    link: "https://www.dicoding.com/certificates/QLZ9R7DREP5D",
-  },
-  {
-    category: "Cloud & DevOps",
-    name: "Cloud Practitioner Essentials (Learn AWS Cloud Basics)",
-    year: "2023",
-    image: "/certifications/cnd3.png",
-    link: "https://www.dicoding.com/certificates/GRX52L53VX0M",
-  },
-  {
-    category: "Cloud & DevOps",
     name: "Learn to Build Microservices Architecture",
     year: "2023",
     image: "/certifications/cnd4.png",
@@ -157,6 +150,20 @@ const certificationsData = [
     year: "2023",
     image: "/certifications/cnd6.png",
     link: "https://www.dicoding.com/certificates/1RXY0E6OQZVM",
+  },
+  {
+    category: "Cloud & DevOps",
+    name: "Architecting on AWS (Building Cloud Architecture on AWS)",
+    year: "2023",
+    image: "/certifications/cnd2.png",
+    link: "https://www.dicoding.com/certificates/QLZ9R7DREP5D",
+  },
+  {
+    category: "Cloud & DevOps",
+    name: "Cloud Practitioner Essentials (Learn AWS Cloud Basics)",
+    year: "2023",
+    image: "/certifications/cnd3.png",
+    link: "https://www.dicoding.com/certificates/GRX52L53VX0M",
   },
 ];
 
