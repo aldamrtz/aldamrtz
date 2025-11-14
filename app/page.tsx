@@ -207,7 +207,7 @@ export default function Page() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-[#eb5c74] hover:bg-[#c3224d] 
+          className="fixed bottom-6 right-6 z-50 bg-[#eb5c74] hover:bg-[#c3224d] 
     text-white rounded-full p-4 shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center"
           style={{
             width: "45px",
