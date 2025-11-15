@@ -203,7 +203,7 @@ export default function Experience() {
                     {exp.gallery?.length > 0 && (
                       <button
                         onClick={() => openModal("gallery", exp.gallery)}
-                        className="px-3 py-1 bg-[#f6b7c1] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition"
+                        className="px-3 py-1 bg-[#f6b7c1] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition cursor-pointer"
                       >
                         View Gallery
                       </button>
@@ -211,7 +211,7 @@ export default function Experience() {
                     {exp.certificate?.length > 0 && (
                       <button
                         onClick={() => openModal("gallery", exp.certificate)}
-                        className="px-3 py-1 bg-[#ffffb0] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition"
+                        className="px-3 py-1 bg-[#ffffb0] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition cursor-pointer"
                       >
                         View Certificate
                       </button>
