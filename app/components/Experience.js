@@ -32,9 +32,9 @@ const experienceData = [
     company: "Law Study Program, Universitas Jenderal Achmad Yani",
     year: "Cimahi, July 2025",
     gallery: [
-      "/experience/t2a.jpg",
+      "/experience/t2a.png",
       "/experience/t2b.jpg",
-      "/experience/t2c.jpg",
+      "/experience/t2c.png",
       "/experience/t2d.jpg",
     ],
     description:
