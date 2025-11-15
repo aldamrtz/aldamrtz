@@ -49,7 +49,6 @@ export default function About() {
       id="about"
       className="max-w-6xl mx-auto py-10 px-6 lg:px-10 flex flex-col gap-6 bg-[#0f2e51]"
     >
-      {/* JUDUL */}
       <h2 className="flex items-center justify-center gap-4">
         <span className="flex-1 h-px bg-[#b4dbdc]"></span>
 
@@ -57,7 +56,7 @@ export default function About() {
           className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
           style={{ color: "#eb5c74", WebkitTextStroke: "1px #c3224d" }}
         >
-          <span>Get to know</span>
+          <span>Get to Know</span>
           <span
             className="text-3xl lg:text-4xl"
             style={{

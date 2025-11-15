@@ -7,7 +7,6 @@ import { SiThreads } from "react-icons/si";
 export default function Contact() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
-
   const [show, setShow] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -85,7 +84,7 @@ export default function Contact() {
       <h2 className="flex items-center mb-12 justify-center gap-4">
         <span
           className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
+          style={{ backgroundColor: "#9dc5c6" }}
         ></span>
         <span
           className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
@@ -108,7 +107,7 @@ export default function Contact() {
         </span>
         <span
           className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
+          style={{ backgroundColor: "#9dc5c6" }}
         ></span>
       </h2>
 
@@ -120,9 +119,9 @@ export default function Contact() {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
+              className="flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#9dc5c6]/60"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
+              <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#9dc5c6] text-[#0f2e51]">
                 <Icon />
               </div>
 
@@ -146,9 +145,9 @@ export default function Contact() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
+                className="flex-1 min-w-[200px] flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#9dc5c6]/60"
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
+                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#9dc5c6] text-[#0f2e51]">
                   <Icon size={36} className="w-7 h-7" />
                 </div>
                 <div className="flex flex-col">
@@ -186,16 +185,16 @@ export default function Contact() {
                   name="name"
                   placeholder=" "
                   className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
-          focus:outline-none focus:border focus:border-[#0f2e51] 
-          hover:border-[#9dc5c6] transition-colors"
+                    focus:outline-none focus:border focus:border-[#0f2e51] 
+                    hover:border-[#9dc5c6] transition-colors"
                   required
                 />
                 <label
                   className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
-          transition-all duration-300 pointer-events-none
-          peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
-          peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-          peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                    transition-all duration-300 pointer-events-none
+                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                    peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
+                    peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
                 >
                   Your Name
                 </label>
@@ -207,17 +206,17 @@ export default function Contact() {
                   name="email"
                   placeholder=" "
                   className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
-          focus:outline-none focus:border focus:border-[#0f2e51] 
-          hover:border-[#9dc5c6] transition-colors"
+                    focus:outline-none focus:border focus:border-[#0f2e51] 
+                    hover:border-[#9dc5c6] transition-colors"
                   required
                 />
                 <label
                   className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1
-  transition-all duration-300 pointer-events-none
-  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
-  peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:text-[#9dc5c6] peer-[&:not(:placeholder-shown)]:text-sm
-  peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-  peer-focus:peer-[&:not(:placeholder-shown)]:text-[#0f2e51]"
+                    transition-all duration-300 pointer-events-none
+                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                    peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:text-[#9dc5c6] peer-[&:not(:placeholder-shown)]:text-sm
+                    peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
+                    peer-focus:peer-[&:not(:placeholder-shown)]:text-[#0f2e51]"
                 >
                   Your Email
                 </label>
@@ -230,16 +229,16 @@ export default function Contact() {
                 name="subject"
                 placeholder=" "
                 className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
-        focus:outline-none focus:border focus:border-[#0f2e51] 
-        hover:border-[#9dc5c6] transition-colors"
+                  focus:outline-none focus:border focus:border-[#0f2e51] 
+                  hover:border-[#9dc5c6] transition-colors"
                 required
               />
               <label
                 className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
-        transition-all duration-300 pointer-events-none
-        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
-        peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-        peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                  transition-all duration-300 pointer-events-none
+                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                  peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
+                  peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
               >
                 Subject
               </label>
@@ -251,16 +250,16 @@ export default function Contact() {
                 rows="4"
                 placeholder=" "
                 className="peer w-full border border-[#9dc5c6] rounded-lg p-5 
-        focus:outline-none focus:border focus:border-[#0f2e51] 
-        hover:border-[#9dc5c6] transition-colors"
+                  focus:outline-none focus:border focus:border-[#0f2e51] 
+                  hover:border-[#9dc5c6] transition-colors"
                 required
               ></textarea>
               <label
                 className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
-        transition-all duration-300 pointer-events-none
-        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
-        peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-        peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                  transition-all duration-300 pointer-events-none
+                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                  peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
+                  peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
               >
                 Your Message
               </label>

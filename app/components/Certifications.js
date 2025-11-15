@@ -43,6 +43,7 @@ const certificationsData = [
     image: "/certifications/ai4.png",
     link: "https://www.dicoding.com/certificates/6RPNRE218X2M",
   },
+
   // Web Development
   {
     category: "Web Development",
@@ -86,6 +87,7 @@ const certificationsData = [
     image: "/certifications/web6.png",
     link: "https://www.dicoding.com/certificates/1OP803R5VXQK",
   },
+
   // Programming
   {
     category: "Programming",
@@ -122,6 +124,7 @@ const certificationsData = [
     image: "/certifications/pro5.png",
     link: "https://www.dicoding.com/certificates/N9ZO6VY6YXG5",
   },
+
   // Cloud & DevOps
   {
     category: "Cloud & DevOps",
@@ -266,15 +269,14 @@ export default function Certifications() {
           <SwiperSlide key={index} className="!h-auto">
             <div
               className="
-          relative
-          group
-          overflow-hidden
-          transition-all
-          duration-500
-          hover:scale-105
-          hover:shadow-[0_10px_20px_-5px_#b4dbdc]
-          bg-white
-        "
+                relative
+                group
+                overflow-hidden
+                transition-all
+                duration-500
+                hover:scale-105
+                hover:shadow-[0_10px_20px_-5px_#b4dbdc]
+                bg-white"
             >
               <a
                 href={cert.link}
@@ -291,13 +293,12 @@ export default function Certifications() {
 
               <div
                 className="
-            absolute inset-0 bg-gradient-to-r from-transparent
-            via-[#b4dbdc80] to-transparent opacity-0
-            group-hover:opacity-100 translate-x-[-100%]
-            group-hover:translate-x-[100%]
-            transition-all duration-[1200ms]
-            ease-in-out pointer-events-none
-          "
+                  absolute inset-0 bg-gradient-to-r from-transparent
+                  via-[#b4dbdc80] to-transparent opacity-0
+                  group-hover:opacity-100 translate-x-[-100%]
+                  group-hover:translate-x-[100%]
+                  transition-all duration-[1200ms]
+                  ease-in-out pointer-events-none"
               ></div>
             </div>
           </SwiperSlide>

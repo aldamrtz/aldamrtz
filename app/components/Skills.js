@@ -4,16 +4,11 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 export default function Skills() {
-  const languageSkills = ["English", "Indonesian"];
-
   const hardSkills = [
-    // Markup & Styling
     { name: "HTML", icon: "/logo/html.png" },
     { name: "CSS", icon: "/logo/css.png" },
     { name: "Bootstrap", icon: "/logo/bootstrap.png" },
     { name: "Tailwind CSS", icon: "/logo/tailwind-css.png" },
-
-    // Programming / Frameworks
     { name: "Java", icon: "/logo/java.png" },
     { name: "JavaScript", icon: "/logo/js.png" },
     { name: "PHP", icon: "/logo/php.png" },
@@ -21,21 +16,13 @@ export default function Skills() {
     { name: "Next.js", icon: "/logo/nextjs.png" },
     { name: "Node.js", icon: "/logo/nodejs.png" },
     { name: "CodeIgniter", icon: "/logo/ci.png" },
-
-    // Database
     { name: "MySQL", icon: "/logo/mysql.png" },
-
-    // Version Control & DevOps
     { name: "Git", icon: "/logo/git.png" },
     { name: "Docker", icon: "/logo/docker.png" },
     { name: "Kubernetes", icon: "/logo/kubernetes.png" },
     { name: "Jenkins", icon: "/logo/jenkins.png" },
-
-    // Design Tools
     { name: "Figma", icon: "/logo/figma.png" },
     { name: "Canva", icon: "/logo/canva.png" },
-
-    // Microsoft Office (4 tools)
     { name: "Word", icon: "/logo/ms-word.png" },
     { name: "Excel", icon: "/logo/ms-excel.png" },
     { name: "PowerPoint", icon: "/logo/ms-ppt.png" },
@@ -85,13 +72,10 @@ export default function Skills() {
       </h2>
 
       <motion.div className="flex flex-col gap-5">
-        {/* Languages + Non-Technical Skills */}
         <div className="flex flex-col md:flex-row md:gap-8">
-          {/* Languages */}
           <div className="flex-none md:w-1/5">
             <h3 className="font-semibold mb-3 text-lg text-white">Languages</h3>
             <div className="flex flex-col gap-2">
-              {/* Bahasa Indonesia */}
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -102,8 +86,6 @@ export default function Skills() {
                 <span>Indonesian</span>
               </motion.span>
 
-              {/* English */}
-              {/* English */}
               <a
                 href="https://drive.google.com/file/d/1pe7KM9bihuw8po3ZNVKAJIdlxsTH3AxX/view?usp=sharing"
                 target="_blank"
@@ -123,7 +105,6 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Non-Technical Skills */}
           <div className="flex-1 mt-4 md:mt-0">
             <h3 className="font-semibold mb-3 text-lg text-white">
               Non-Technical Skills
@@ -145,7 +126,6 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Technical Skills */}
         <div>
           <h3 className="font-semibold mb-3 text-lg text-white">
             Technical Skills

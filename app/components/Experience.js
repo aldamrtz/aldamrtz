@@ -32,9 +32,9 @@ const experienceData = [
     company: "Law Study Program, Universitas Jenderal Achmad Yani",
     year: "Cimahi, July 2025",
     gallery: [
-      "/experience/t2a.jpg",
+      "/experience/t2a.png",
       "/experience/t2b.jpg",
-      "/experience/t2c.jpg",
+      "/experience/t2c.png",
       "/experience/t2d.jpg",
     ],
     description:
@@ -99,9 +99,8 @@ export default function Experience() {
   const bulletPositions = [10, 30, 180, 250];
   const tabs = ["Internship", "Teaching Assistant", "Training", "Organization"];
   const [activeTab, setActiveTab] = useState("Internship");
-  const [modalContent, setModalContent] = useState(null); // {type, items}
+  const [modalContent, setModalContent] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const filteredData = experienceData.filter((exp) => exp.type === activeTab);
 
   const openModal = (type, items) => {
@@ -176,8 +175,8 @@ export default function Experience() {
               <div
                 className={`w-full md:w-1/2 ${
                   isRight
-                    ? "pl-10 pr-5 md:ml-auto md:pl-7 md:pr-5 relative text-left" // mobile: pl-4, desktop tetap ml-auto & pl-8
-                    : "pl-10 pr-5 md:mr-auto md:pr-7 md:pl-5 relative text-left md:text-right -mt-10" // mobile: pl-4, desktop tetap mr-auto & pr-8
+                    ? "pl-10 pr-5 md:ml-auto md:pl-7 md:pr-5 relative text-left"
+                    : "pl-10 pr-5 md:mr-auto md:pr-7 md:pl-5 relative text-left md:text-right -mt-10"
                 }`}
                 style={isRight ? { transform: "translateY(-20px)" } : {}}
               >
