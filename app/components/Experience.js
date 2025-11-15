@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const experienceData = [
   // Internship
@@ -10,11 +11,7 @@ const experienceData = [
     position: "Information Systems Intern",
     company: "Rectorate, Universitas Jenderal Achmad Yani",
     year: "Cimahi, August 2024 – September 2024",
-    images: [
-      "/experience/i1a.jpg",
-      "/experience/i1b.jpg",
-      "/experience/i1c.jpg",
-    ],
+    gallery: ["/experience/i1a.jpg", "/experience/i1b.jpg"],
     description:
       "Developed a web-based application to manage account and subdomain requests at Jenderal Achmad Yani University, including system analysis, UI/UX design, Black Box and User Acceptance Testing (92% student and 88% admin satisfaction), and preparation of technical documentation for implementation.",
   },
@@ -23,11 +20,7 @@ const experienceData = [
     position: "Field Work Practice",
     company: "PT. Hitachi Chemical Indonesia",
     year: "Karawang, October 2019 – December 2019",
-    images: [
-      "/experience/i2a.png",
-      "/experience/i2b.jpg",
-      "/experience/i2c.png",
-    ],
+    certificate: ["/experience/i2a.png", "/experience/i2c.png"],
     description:
       "Managed daily production line tasks at PT. Hitachi Chemical Indonesia, including preparing worksheets and Process Control Sheets, summarizing production data for Plant 1 and Plant 2, handling around 150 physical documents, and participating in 5S initiatives to ensure workplace efficiency and organization.",
   },
@@ -38,10 +31,11 @@ const experienceData = [
     position: "Teaching Assistant – Computer Education Practicum",
     company: "Law Study Program, Universitas Jenderal Achmad Yani",
     year: "Cimahi, July 2025",
-    images: [
+    gallery: [
       "/experience/t2a.jpg",
       "/experience/t2b.jpg",
       "/experience/t2c.jpg",
+      "/experience/t2d.jpg",
     ],
     description:
       "Assisted 40+ students in practical sessions, guiding them on Microsoft Word for thesis preparation, answering questions, preparing materials, coordinating with lecturers, and evaluating student assignments.",
@@ -52,7 +46,7 @@ const experienceData = [
     company:
       "Informatics Engineering Study Program, Universitas Jenderal Achmad Yani",
     year: "Cimahi, October 2022 – December 2022",
-    images: ["/experience/t1a.png", "/experience/t1b.png"],
+    certificate: ["/experience/t1a.png"],
     description:
       "Assisted 30+ students in understanding practicum materials and exercises, focusing on Microsoft Word, Excel, and PowerPoint. Provided support by answering questions, facilitating learning during sessions, preparing practicum materials, coordinating with lecturers, and evaluating students’ practicum reports.",
   },
@@ -64,11 +58,7 @@ const experienceData = [
     company:
       "Kementerian Komunikasi dan Informatika Republik Indonesia (KOMDIGI)",
     year: "Karawang, October 2025 – Present",
-    images: [
-      "/experience/p2a.png",
-      "/experience/p2b.png",
-      "/experience/p2c.png",
-    ],
+    certificate: ["/experience/p1a.png", "/experience/p1b.png"],
     description:
       "Currently progressing in the Google Project Management Learning Path at the Intermediate level. The program builds on fundamental project management skills, covering risk management, quality control, digital project tools, and practical application through case studies. It integrates AI essentials to enhance productivity and responsible use of AI in project planning and execution. Focused on applying theory to real-world project scenarios while developing competencies in project initiation, planning, and execution.",
   },
@@ -78,10 +68,15 @@ const experienceData = [
       "Full-Stack Developer Participant – Studi Independen Bersertifikat Dicoding x Kampus Merdeka Cycle 5 Program ",
     company: "Dicoding Indonesia (PT Presentologics)",
     year: "Bandung, August 2023 – December 2023",
-    images: [
-      "/experience/p1a.png",
-      "/experience/p1b.png",
-      "/experience/p1c.png",
+    gallery: [
+      "/experience/p2a.png",
+      "/experience/p2b.png",
+      "/experience/p2c.png",
+    ],
+    certificate: [
+      "/experience/p2d.png",
+      "/experience/p2e.png",
+      "/experience/p2f.png",
     ],
     description:
       "Completed intensive online training covering theory, hands-on practice, quizzes, exams, and a capstone project. Gained technical proficiency in Front-End, Back-End, and DevOps through 10+ certification classes, instructor-led sessions, expert mentoring, and consultations. Developed non-technical skills in Growth Mindset, Communication, and Business Presentation, etc. Collaborated on a team project to build a web-based application integrating Front-End, Back-End, and DevOps.",
@@ -94,29 +89,36 @@ const experienceData = [
     company:
       "Informatics Engineering Study Program, Universitas Jenderal Achmad Yani",
     year: "Cimahi, July 2024",
-    images: ["/experience/o1.jpg", "/experience/o2.jpg", "/experience/o3.jpg"],
+    gallery: ["/experience/o1.jpg", "/experience/o2.jpg", "/experience/o3.jpg"],
     description:
       "Managed participant and staff needs, including meals and health, from preparation to distribution to ensure smooth event operations. Coordinated with team members across divisions to maintain organized and efficient processes, and supervised on-site activities while addressing any arising issues.",
   },
 ];
 
-export default function ExperienceTimeline() {
+export default function Experience() {
   const bulletPositions = [10, 30, 180, 250];
   const tabs = ["Internship", "Teaching Assistant", "Training", "Organization"];
   const [activeTab, setActiveTab] = useState("Internship");
-  const [expanded, setExpanded] = useState(
-    Array(experienceData.length).fill(false)
-  );
+  const [modalContent, setModalContent] = useState(null); // {type, items}
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const filteredData = experienceData.filter((exp) => exp.type === activeTab);
 
-  const toggleExpand = (index) => {
-    setExpanded((prev) => {
-      const newExpanded = [...prev];
-      newExpanded[index] = !newExpanded[index];
-      return newExpanded;
-    });
+  const openModal = (type, items) => {
+    setModalContent({ type, items });
+    setCurrentSlide(0);
   };
+
+  const closeModal = () => setModalContent(null);
+
+  const nextSlide = () =>
+    setCurrentSlide((prev) =>
+      prev + 1 >= modalContent.items.length ? 0 : prev + 1
+    );
+  const prevSlide = () =>
+    setCurrentSlide((prev) =>
+      prev - 1 < 0 ? modalContent.items.length - 1 : prev - 1
+    );
 
   return (
     <section className="max-w-6xl mx-auto py-12 px-4 bg-[#0f2e51]">
@@ -196,12 +198,90 @@ export default function ExperienceTimeline() {
                       ? exp.description.join(" ")
                       : exp.description}
                   </p>
+
+                  <div className="flex gap-3 mt-3 flex-wrap">
+                    {exp.gallery?.length > 0 && (
+                      <button
+                        onClick={() => openModal("gallery", exp.gallery)}
+                        className="px-3 py-1 bg-[#f6b7c1] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition"
+                      >
+                        View Gallery
+                      </button>
+                    )}
+                    {exp.certificate?.length > 0 && (
+                      <button
+                        onClick={() => openModal("gallery", exp.certificate)}
+                        className="px-3 py-1 bg-[#ffffb0] text-sm font-medium text-[#0f2e51] rounded hover:scale-105 transition"
+                      >
+                        View Certificate
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           );
         })}
       </div>
+
+      {modalContent && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <motion.div
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            className="bg-white p-0 rounded-lg max-w-lg w-full relative flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative flex items-center justify-between px-4 py-6">
+              {modalContent.items.length > 1 && (
+                <button
+                  onClick={prevSlide}
+                  className="p-2 rounded-full transition hover:bg-gray-200 hover:shadow-md hover:scale-105 cursor-pointer text-[#0f2e51]"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+              )}
+
+              <div className="flex-1 flex justify-center px-4">
+                <img
+                  src={modalContent.items[currentSlide]}
+                  alt="Gallery"
+                  className="max-h-96 object-contain rounded"
+                />
+              </div>
+
+              {modalContent.items.length > 1 && (
+                <button
+                  onClick={nextSlide}
+                  className="p-2 rounded-full transition hover:bg-gray-200 hover:shadow-md hover:scale-105 cursor-pointer text-[#0f2e51]"
+                >
+                  <ChevronRight className="w-6 h-6 text-[#0f2e51]" />
+                </button>
+              )}
+            </div>
+
+            {modalContent.items.length > 1 && (
+              <div className="flex gap-2 mt-[-7] justify-center pb-4">
+                {modalContent.items.map((_, idx) => (
+                  <span
+                    key={idx}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      currentSlide === idx ? "bg-[#0f2e51]" : "bg-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 }
