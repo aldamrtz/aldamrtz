@@ -10,24 +10,26 @@ export default function About() {
       graduate in Informatics Engineering who’s{" "}
       <span className="text-[#f6b7c1]">endlessly curious</span> about how tech
       shapes everyday life. <span className="text-[#a5c882]">I’ve</span>{" "}
-      explored building <span className="text-[#ffffb0]">web apps</span>,
-      managing <span className="text-[#ffffb0]">databases</span>, and working
-      with tools like <span className="text-[#ffffb0]">Microsoft Word</span>,{" "}
-      <span className="text-[#ffffb0]">PowerPoint</span>, and{" "}
-      <span className="text-[#ffffb0]">Excel</span> along the way.
+      explored building <span className="text-[#ffffb0]">web apps</span>{" "}
+      end-to-end, from designing the{" "}
+      <span className="text-[#ffffb0]">interface</span>, crafting the{" "}
+      <span className="text-[#ffffb0]">backend logic</span>, managing{" "}
+      <span className="text-[#ffffb0]">databases</span>, integrating{" "}
+      <span className="text-[#ffffb0]">APIs</span>, to making sure everything
+      runs smoothly through <span className="text-[#ffffb0]">testing</span>.
     </>,
     <>
-      <span className="text-[#a5c882]">I</span> enjoy{" "}
-      <span className="text-[#b4dbdc]">working with people</span>,{" "}
-      <span className="text-[#c2b5e3]">sharing knowledge</span>, and growing
-      through <span className="text-[#b4dbdc]">teamwork</span> on different{" "}
-      <span className="text-[#b4dbdc]">projects</span>. That’s where{" "}
-      <span className="text-[#a5c882]">I’ve</span> discovered that sharing
-      knowledge is just as fun as{" "}
-      <span className="text-[#c2b5e3]">gaining it</span>!
+      Along the way, <span className="text-[#a5c882]">I</span> also discovered
+      how much <span className="text-[#a5c882]">I</span> enjoy{" "}
+      <span className="text-[#b4dbdc]">collaborating with people</span> and
+      growing through <span className="text-[#b4dbdc]">teamwork</span> on
+      different <span className="text-[#b4dbdc]">projects</span>. It turns out
+      that sharing <span className="text-[#c2b5e3]">knowledge</span> can be just
+      as worthwhile as learning{" "}
+      <span className="text-[#a5c882]">it myself</span>.
     </>,
     <>
-      Right now, <span className="text-[#a5c882]">I’m</span> embracing every
+      At the moment, <span className="text-[#a5c882]">I’m</span> embracing every
       chance to <span className="text-[#c2b5e3]">learn</span>,{" "}
       <span className="text-[#c2b5e3]">experiment</span>, and{" "}
       <span className="text-[#c2b5e3]">sharpen my skills</span>. With a big{" "}
