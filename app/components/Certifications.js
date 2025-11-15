@@ -10,24 +10,52 @@ const certificationsData = [
   // AI
   {
     category: "AI",
+    name: "Google AI Essentials V1",
+    year: "2025",
+    image: "/certifications/ai9.png",
+    link: "https://www.credly.com/badges/2903f511-fd09-4e06-bb88-093ea9b0882d/public_url",
+  },
+  {
+    category: "AI",
+    name: "Google AI Essentials",
+    year: "2025",
+    image: "/certifications/ai8.jpg",
+    link: "https://coursera.org/share/eaa2117bfb2e872f557e5d99019bd09b",
+  },
+  {
+    category: "AI",
+    name: "Stay Ahead of the AI Curve",
+    year: "2025",
+    image: "/certifications/ai7.png",
+    link: "https://coursera.org/share/3f5282e1ec8fab7342c41503f0c352b5",
+  },
+  {
+    category: "AI",
+    name: "Use AI Responsibly",
+    year: "2025",
+    image: "/certifications/ai6.png",
+    link: "https://coursera.org/share/2343a9f556663397de15bc4052b8f6f6",
+  },
+  {
+    category: "AI",
     name: "Discover the Art of Prompting",
     year: "2025",
     image: "/certifications/ai5.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/2IAF867MQYX5",
+    link: "https://coursera.org/share/30536728c84d218254cc79b8da707e4f",
   },
   {
     category: "AI",
     name: "Maximize Productivity With AI Tools",
     year: "2025",
     image: "/certifications/ai3.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/6C3CZE28PYT4",
+    link: "https://coursera.org/share/f1807645ae70dcea2df2242ba24e2b20",
   },
   {
     category: "AI",
     name: "Introduction to AI",
     year: "2025",
     image: "/certifications/ai2.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/K045T3W68AMH",
+    link: "https://coursera.org/share/f7bde15adaecac5624775d3a0eaae26d",
   },
   {
     category: "AI",
@@ -168,6 +196,15 @@ const certificationsData = [
     image: "/certifications/cnd3.png",
     link: "https://www.dicoding.com/certificates/GRX52L53VX0M",
   },
+
+  // Project Management
+  {
+    category: "Project Management",
+    name: "Foundations of Project Management",
+    year: "2025",
+    image: "/certifications/pm1.png",
+    link: "https://coursera.org/share/78d0eb35ab5b3f57eb03093994869e0a",
+  },
 ];
 
 export default function Certifications() {
@@ -177,6 +214,7 @@ export default function Certifications() {
     "Web Development",
     "Programming",
     "Cloud & DevOps",
+    "Project Management",
   ];
   const [activeTab, setActiveTab] = useState("All");
 
