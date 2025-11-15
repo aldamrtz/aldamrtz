@@ -233,7 +233,7 @@ export default function Certifications() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-lg font-medium transition ${
+            className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer ${
               activeTab === tab
                 ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
                 : "bg-white text-[#0f2e51] hover:bg-[#b4dbdc] hover:shadow-lg"

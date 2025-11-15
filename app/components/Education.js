@@ -98,7 +98,9 @@ export default function Education() {
                   <p className="text-[#6f8757] text-sm font-medium">
                     {edu.major}
                   </p>
-                  <p className="text-[#9dc5c6] text-xs mt-1">{edu.period}</p>
+                  <p className="text-[#b4dbdc] text-xs mt-1 font-medium">
+                    {edu.period}
+                  </p>
                   <p className="text-[#0f2e51] text-xs mt-1 font-medium">
                     {edu.grade}
                   </p>
@@ -135,7 +137,9 @@ export default function Education() {
                   <h4 className="text-sm font-semibold text-[#0f2e51] mt-1">
                     {pub.title}
                   </h4>
-                  <p className="text-[#9dc5c6] text-xs mt-1">{pub.author}</p>
+                  <p className="text-[#b4dbdc] font-medium text-xs mt-1">
+                    {pub.author}
+                  </p>
                   <div className="flex flex-wrap gap-2 mt-1">
                     <span className="bg-[#c2b5e3] text-[#3a2f53] px-2 py-0.5 rounded-full text-xs mt-1">
                       {pub.sinta}
@@ -176,7 +180,9 @@ export default function Education() {
                   <p className="text-[#0f2e51] text-xs mt-1 font-medium">
                     {ach.institution}
                   </p>
-                  <p className="text-[#9dc5c6] text-xs mt-1">{ach.period}</p>
+                  <p className="text-[#b4dbdc] font-medium text-xs mt-1">
+                    {ach.period}
+                  </p>
                 </a>
               ))}
             </div>

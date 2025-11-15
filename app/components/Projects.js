@@ -251,7 +251,7 @@ export default function Projects() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-lg font-medium transition ${
+            className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer ${
               activeTab === tab
                 ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
                 : "bg-white text-[#0f2e51] hover:bg-[#b4dbdc] hover:shadow-lg"
@@ -333,7 +333,7 @@ export default function Projects() {
                 {project.tech.length > 3 && (
                   <span
                     className="text-xs font-medium"
-                    style={{ color: "#9dc5c6" }}
+                    style={{ color: "#b4dbdc" }}
                   >
                     +{project.tech.length - 3} more
                   </span>
@@ -386,7 +386,7 @@ export default function Projects() {
                     {selected.title}
                   </h3>
                 </div>
-                <p className="text-sm italic" style={{ color: "#9dc5c6" }}>
+                <p className="text-sm italic" style={{ color: "#b4dbdc" }}>
                   {selected.category}
                 </p>
               </div>

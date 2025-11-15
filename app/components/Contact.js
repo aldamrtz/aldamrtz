@@ -84,7 +84,7 @@ export default function Contact() {
       <h2 className="flex items-center mb-12 justify-center gap-4">
         <span
           className="flex-1 h-px"
-          style={{ backgroundColor: "#9dc5c6" }}
+          style={{ backgroundColor: "#b4dbdc" }}
         ></span>
         <span
           className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
@@ -107,7 +107,7 @@ export default function Contact() {
         </span>
         <span
           className="flex-1 h-px"
-          style={{ backgroundColor: "#9dc5c6" }}
+          style={{ backgroundColor: "#b4dbdc" }}
         ></span>
       </h2>
 
@@ -119,9 +119,9 @@ export default function Contact() {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#9dc5c6]/60"
+              className="flex items-center gap-4 bg-white border-2 border-[#b4dbdc] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#9dc5c6] text-[#0f2e51]">
+              <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
                 <Icon />
               </div>
 
@@ -129,7 +129,7 @@ export default function Contact() {
                 <span className="font-semibold text-lg text-[#0f2e51]">
                   {name}
                 </span>
-                <span className="text-sm" style={{ color: "#9dc5c6" }}>
+                <span className="text-sm" style={{ color: "#b4dbdc" }}>
                   {name === "Email"
                     ? username
                     : username.split("/").filter(Boolean).pop()}
@@ -145,16 +145,16 @@ export default function Contact() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] flex items-center gap-4 bg-white border-2 border-[#9dc5c6] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#9dc5c6]/60"
+                className="flex-1 min-w-[200px] flex items-center gap-4 bg-white border-2 border-[#b4dbdc] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#9dc5c6] text-[#0f2e51]">
+                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
                   <Icon size={36} className="w-7 h-7" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-semibold text-lg text-[#0f2e51]">
                     {name}
                   </span>
-                  <span className="text-sm" style={{ color: "#9dc5c6" }}>
+                  <span className="text-sm" style={{ color: "#b4dbdc" }}>
                     {username.split("/").filter(Boolean).pop()}
                   </span>
                 </div>
@@ -176,7 +176,7 @@ export default function Contact() {
           </div>
         )}
 
-        <div className="bg-white border-2 border-[#9dc5c6] rounded-xl p-6 shadow-md min-h-[408px] flex flex-col justify-between">
+        <div className="bg-white border-2 border-[#b4dbdc] rounded-xl p-6 shadow-md min-h-[408px] flex flex-col justify-between">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="relative">
@@ -184,17 +184,17 @@ export default function Contact() {
                   type="text"
                   name="name"
                   placeholder=" "
-                  className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
+                  className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
                     focus:outline-none focus:border focus:border-[#0f2e51] 
-                    hover:border-[#9dc5c6] transition-colors"
+                    hover:border-[#b4dbdc] transition-colors"
                   required
                 />
                 <label
-                  className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
+                  className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
                     transition-all duration-300 pointer-events-none
-                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
                     peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                    peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                    peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
                 >
                   Your Name
                 </label>
@@ -205,16 +205,16 @@ export default function Contact() {
                   type="email"
                   name="email"
                   placeholder=" "
-                  className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
+                  className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
                     focus:outline-none focus:border focus:border-[#0f2e51] 
-                    hover:border-[#9dc5c6] transition-colors"
+                    hover:border-[#b4dbdc] transition-colors"
                   required
                 />
                 <label
-                  className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1
+                  className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1
                     transition-all duration-300 pointer-events-none
-                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
-                    peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:text-[#9dc5c6] peer-[&:not(:placeholder-shown)]:text-sm
+                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
+                    peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:text-[#b4dbdc] peer-[&:not(:placeholder-shown)]:text-sm
                     peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
                     peer-focus:peer-[&:not(:placeholder-shown)]:text-[#0f2e51]"
                 >
@@ -228,17 +228,17 @@ export default function Contact() {
                 type="text"
                 name="subject"
                 placeholder=" "
-                className="peer w-full border border-[#9dc5c6] rounded-lg p-3 
+                className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
                   focus:outline-none focus:border focus:border-[#0f2e51] 
-                  hover:border-[#9dc5c6] transition-colors"
+                  hover:border-[#b4dbdc] transition-colors"
                 required
               />
               <label
-                className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
+                className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
                   transition-all duration-300 pointer-events-none
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
                   peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                  peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                  peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
               >
                 Subject
               </label>
@@ -249,17 +249,17 @@ export default function Contact() {
                 name="message"
                 rows="4"
                 placeholder=" "
-                className="peer w-full border border-[#9dc5c6] rounded-lg p-5 
+                className="peer w-full border border-[#b4dbdc] rounded-lg p-5 
                   focus:outline-none focus:border focus:border-[#0f2e51] 
-                  hover:border-[#9dc5c6] transition-colors"
+                  hover:border-[#b4dbdc] transition-colors"
                 required
               ></textarea>
               <label
-                className="absolute left-3 top-4 text-[#9dc5c6] text-sm bg-white px-1 
+                className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
                   transition-all duration-300 pointer-events-none
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#9dc5c6]
+                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
                   peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                  peer-valid:-top-2.5 peer-valid:text-[#9dc5c6] peer-valid:text-sm"
+                  peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
               >
                 Your Message
               </label>
@@ -267,7 +267,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className={`bg-[#9dc5c6] text-white font-bold py-2 px-5 rounded-lg transition-colors w-full flex justify-center items-center gap-2 ${
+              className={`bg-[#b4dbdc] text-white font-bold py-2 px-5 rounded-lg transition-colors w-full flex justify-center cursor-pointer items-center gap-2 ${
                 loading ? "cursor-not-allowed opacity-70" : "hover:bg-[#0f2e51]"
               }`}
               disabled={loading}
