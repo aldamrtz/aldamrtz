@@ -86,22 +86,15 @@ export default function Skills() {
                 <span>Indonesian</span>
               </motion.span>
 
-              <a
-                href="https://drive.google.com/file/d/1pe7KM9bihuw8po3ZNVKAJIdlxsTH3AxX/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                className="flex items-center justify-center px-3 py-1 rounded-full text-sm bg-white text-[#0f2e51]"
               >
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  className="flex items-center justify-center px-3 py-1 rounded-full text-sm bg-white text-[#0f2e51] hover:bg-[#ffffb0] hover:scale-105 cursor-pointer gap-1"
-                >
-                  <span>English</span>
-                  <ExternalLink className="w-3 h-3 text-[#0f2e51]" />
-                </motion.span>
-              </a>
+                <span>English</span>
+              </motion.span>
             </div>
           </div>
 

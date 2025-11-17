@@ -13,7 +13,7 @@ const experienceData = [
     year: "Cimahi, August 2024 – September 2024",
     gallery: ["/experience/i1a.jpg", "/experience/i1b.jpg"],
     description:
-      "Developed a web-based application to manage account and subdomain requests at Jenderal Achmad Yani University, including system analysis, UI/UX design, Black Box and User Acceptance Testing (92% student and 88% admin satisfaction), and preparation of technical documentation for implementation.",
+      "Developed a web-based application to manage account and subdomain requests at Universitas Jenderal Achmad Yani, including system analysis, UI/UX design, Black Box and User Acceptance Testing (92% student and 88% admin satisfaction), and preparation of technical documentation for implementation.",
   },
   {
     type: "Internship",
