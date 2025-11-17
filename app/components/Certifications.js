@@ -243,7 +243,7 @@ export default function Certifications() {
             WebkitTextStroke: "1px #c3224d",
           }}
         >
-          <span>Badges</span>
+          <span>Certifications</span>
           <span
             className="text-3xl lg:text-4xl"
             style={{
