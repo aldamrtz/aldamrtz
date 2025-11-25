@@ -178,10 +178,43 @@ const projectsData = [
     github: "https://github.com/aldamrtz/PemesananHotel",
     tech: ["Java", "MySQL", "Swing", "JDateChooser", "NetBeans"],
   },
+  {
+    title: "OpenShop RESTful API",
+    category: "API",
+    description:
+      "OpenShop RESTful API is a backend service built with the Django REST Framework, designed to manage product data for an e-commerce platform. The API provides complete CRUD functionality (Create, Read, Update, Delete), product search by name, input validation, and a HATEOAS implementation for seamless navigation between resources.",
+    images: ["/project/api2.png"],
+    github: "https://github.com/aldamrtz/OpenShop-RESTful-API",
+    tech: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "SQLite",
+      "Postman",
+      "Visual Studio Code",
+    ],
+  },
+  {
+    title: "Bookshelf API",
+    category: "API",
+    description:
+      "A RESTful API built to manage a digital bookshelf system. It allows users to create, read, update, and delete book records, complete with validation logic for reading progress and filtering options. The API follows clean modular structure using Hapi.js and supports query-based searches for reading status, book completion, and name matching.",
+    images: ["/project/api1.png"],
+    github: "https://github.com/aldamrtz/bookshelf-api",
+    tech: [
+      "Node.js",
+      "Hapi.js",
+      "JavaScript",
+      "RESTful API",
+      "JSON",
+      "Postman",
+      "Visual Studio Code",
+    ],
+  },
 ];
 
 export default function Projects() {
-  const tabs = ["All", "Web Development", "Mobile Apps", "Desktop Apps"];
+  const tabs = ["All", "Web Development", "Mobile Apps", "Desktop Apps", "API"];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
