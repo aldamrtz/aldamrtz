@@ -211,10 +211,35 @@ const projectsData = [
       "Visual Studio Code",
     ],
   },
+  {
+    title: "CI/CD Pipeline Automation with Jenkins",
+    category: "DevOps",
+    description:
+      "A complete CI/CD implementation using Jenkins with scripted pipelines, featuring automated build, test, deliver, and deploy stages for Java Maven applications. The project includes user and role management, Docker-based build agents, Poll SCM for automated triggers, and deployment workflows with manual approval.",
+    images: ["/project/do1.png"],
+    github: "https://github.com/aldamrtz/simple-java-maven-app",
+    tech: [
+      "Jenkins",
+      "Java",
+      "Maven",
+      "Docker",
+      "NGINX",
+      "Git",
+      "GitHub",
+      "Visual Studio Code",
+    ],
+  },
 ];
 
 export default function Projects() {
-  const tabs = ["All", "Web Development", "Mobile Apps", "Desktop Apps", "API"];
+  const tabs = [
+    "All",
+    "Web Development",
+    "Mobile Apps",
+    "Desktop Apps",
+    "API",
+    "DevOps",
+  ];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
