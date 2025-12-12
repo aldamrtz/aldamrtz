@@ -32,14 +32,11 @@ export default function Skills() {
   const softSkills = [
     "Teamwork",
     "Communication",
-    "Problem Solving",
     "Adaptability",
-    "Time Management",
-    "Critical Thinking",
-    "Analytical Thinking",
-    "Responsibility",
-    "Flexibility",
     "Attention to Detail",
+    "Time Management",
+    "Initiative",
+    "Problem Solving",
   ];
 
   return (
@@ -102,7 +99,7 @@ export default function Skills() {
             <h3 className="font-semibold mb-3 text-lg text-white">
               Non-Technical Skills
             </h3>
-            <div className="grid grid-cols-2 grid-rows-5 gap-2 md:grid-cols-5 md:grid-rows-2">
+            <div className="grid grid-cols-2 grid-rows-4 gap-2 md:grid-cols-4 md:grid-rows-2">
               {softSkills.map((soft, idx) => (
                 <motion.span
                   key={soft}

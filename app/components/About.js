@@ -25,15 +25,17 @@ export default function About() {
       growing through <span className="text-[#b4dbdc]">teamwork</span> on
       different <span className="text-[#b4dbdc]">projects</span>. It turns out
       that sharing <span className="text-[#c2b5e3]">knowledge</span> can be just
-      as worthwhile as learning{" "}
-      <span className="text-[#a5c882]">it myself</span>.
+      as worthwhile as learning it{" "}
+      <span className="text-[#a5c882]">myself</span>.
     </>,
     <>
       At the moment, <span className="text-[#a5c882]">I’m</span> embracing every
       chance to <span className="text-[#c2b5e3]">learn</span>,{" "}
       <span className="text-[#c2b5e3]">experiment</span>, and{" "}
-      <span className="text-[#c2b5e3]">sharpen my skills</span>. With a big{" "}
-      <span className="text-[#f6b7c1]">enthusiasm</span> for{" "}
+      <span className="text-[#c2b5e3]">
+        sharpen <span className="text-[#a5c882]">my</span> skills
+      </span>
+      . With a big <span className="text-[#f6b7c1]">enthusiasm</span> for{" "}
       <span className="text-[#c2b5e3]">continuous learning</span> and{" "}
       <span className="text-[#c2b5e3]">adaptability</span>,{" "}
       <span className="text-[#a5c882]">I</span> aim to grow into a tech

@@ -7,13 +7,13 @@ const educationData = [
   {
     major: "Bachelor’s Degree – Informatics Engineering",
     school: "Universitas Jenderal Achmad Yani",
-    period: "Cimahi, September 2021 – September 2025",
+    period: "Cimahi, Sep 2021 – Sep 2025",
     grade: "GPA: 3.59/4.00",
   },
   {
     major: "Computer and Network Engineering",
     school: "SMK Rosma Karawang",
-    period: "Karawang, July 2018 – June 2021",
+    period: "Karawang, Jul 2018 – Jun 2021",
     grade: "Final Grade Average: 85/100",
   },
 ];
@@ -84,25 +84,25 @@ export default function Education() {
             Education
           </h3>
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 relative min-h-[300px] lg:min-h-[325px]">
-            <div className="absolute left-10 top-7 bottom-7 lg:bottom-7 w-[2px] bg-[#6f8757]"></div>
+            <div className="absolute left-10 top-7 bottom-7 lg:bottom-7 w-[2px] bg-[#0f2e51]"></div>
             {educationData.map((edu, idx) => (
               <div key={edu.school} className="mb-4 relative pl-10">
                 <div
-                  className="absolute left-4 w-4 h-4 bg-[#0f2e51] border-2 border-[#6f8757] rounded-full -translate-x-1/2"
+                  className="absolute left-4 w-4 h-4 bg-[#b4dbdc] border-2 border-[#0f2e51] rounded-full -translate-x-1/2"
                   style={{ top: idx === 0 ? "2rem" : "2rem" }}
                 ></div>
                 <div style={{ paddingTop: idx === 0 ? "1.7rem" : "1.7rem" }}>
                   <h3 className="text-lg font-semibold text-[#0f2e51]">
                     {edu.school}
                   </h3>
-                  <p className="text-[#6f8757] text-sm font-medium">
+                  <p className="text-[#0f2e51] text-sm font-medium">
                     {edu.major}
-                  </p>
-                  <p className="text-[#b4dbdc] text-xs mt-1 font-medium">
-                    {edu.period}
                   </p>
                   <p className="text-[#0f2e51] text-xs mt-1 font-medium">
                     {edu.grade}
+                  </p>
+                  <p className="text-[#b4dbdc] text-xs mt-1 font-medium">
+                    {edu.period}
                   </p>
                 </div>
               </div>
@@ -129,14 +129,13 @@ export default function Education() {
                   rel="noopener noreferrer"
                   className="bg-white border-gray-300 p-4 rounded-lg shadow-md hover:shadow-lg hover:bg-[#ffffb0] transform hover:-translate-y-1 transition-all duration-300 relative"
                 >
-                  <ExternalLink className="w-5 h-5 text-[#0f2e51] absolute top-3 right-3" />
-
-                  <p className="text-[#6f8757] text-sm font-medium">
-                    {pub.journal}
-                  </p>
+                  <ExternalLink className="w-5 h-5 text-[#0f2e51] absolute bottom-3 right-3" />
                   <h4 className="text-sm font-semibold text-[#0f2e51] mt-1">
                     {pub.title}
                   </h4>
+                  <p className="text-[#0f2e51] text-sm font-medium">
+                    {pub.journal}
+                  </p>
                   <p className="text-[#b4dbdc] font-medium text-xs mt-1">
                     {pub.author}
                   </p>
@@ -169,12 +168,12 @@ export default function Education() {
                   rel="noopener noreferrer"
                   className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg  hover:bg-[#ffffb0] transform hover:-translate-y-1 transition-all duration-300 relative"
                 >
-                  <ExternalLink className="w-5 h-5 text-[#0f2e51] absolute top-3 right-3" />
+                  <ExternalLink className="w-5 h-5 text-[#0f2e51] absolute bottom-3 right-3" />
 
                   <h4 className="text-sm font-semibold text-[#0f2e51]">
                     {ach.title}
                   </h4>
-                  <p className="text-[#6f8757] text-sm font-medium mt-1">
+                  <p className="text-[#0f2e51] text-sm font-medium mt-1">
                     {ach.description}
                   </p>
                   <p className="text-[#0f2e51] text-xs mt-1 font-medium">

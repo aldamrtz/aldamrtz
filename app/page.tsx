@@ -57,7 +57,7 @@ export default function Page() {
         <div className="flex flex-col items-start text-left z-10">
           <div className="flex items-center gap-4">
             <div
-              className="flex flex-col text-[18px] lg:text-[24px] leading-tight"
+              className="flex flex-col text-[18px] lg:text-[22px] leading-tight"
               style={{ WebkitTextStroke: "0.5px #ffbd4a", color: "#ffffb0" }}
             >
               <span>Hey! You’ve just</span>
@@ -65,7 +65,7 @@ export default function Page() {
             </div>
 
             <div
-              className="font-medium text-7xl lg:text-[6rem] leading-none flex items-center -ml-13 lg:-ml-15 -translate-y-[-30px] lg:translate-y-[35px]"
+              className="font-medium text-7xl lg:text-[6rem] leading-none flex items-center -ml-13 lg:-ml-15 -translate-y-[-30px] lg:translate-y-[45px]"
               style={{
                 fontFamily: "'Brittany Signature', cursive",
                 color: "#a5c882",
@@ -77,7 +77,7 @@ export default function Page() {
           </div>
 
           <h2
-            className="mt-13 relative text-5xl lg:text-8xl font-bold z-10"
+            className="mt-17 relative text-5xl lg:text-8xl font-bold z-10"
             style={{
               position: "relative",
               color: "#eb5c74",
@@ -86,35 +86,30 @@ export default function Page() {
               lineHeight: 1,
             }}
           >
-            {["P", "O", "R", "T", "F", "O", "L", "I"].map((char, idx) => {
-              const offset = isMobile ? 3 : 8;
-              return (
-                <motion.span
-                  key={idx}
+            {["P", "O", "R", "T", "F", "O", "L", "I"].map((char, idx) => (
+              <motion.span
+                key={idx}
+                style={{
+                  display: "inline-block",
+                  position: "relative",
+                  overflow: "hidden",
+                  lineHeight: 1,
+                }}
+                variants={letterVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+              >
+                <span
                   style={{
-                    display: "inline-block",
-                    position: "relative",
-                    overflow: "hidden",
-                    lineHeight: 1,
+                    display: "block",
+                    transform: `translateY(0px)`,
                   }}
-                  variants={letterVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: idx * 0.1, duration: 0.5 }}
                 >
-                  <span
-                    style={{
-                      display: "block",
-                      transform: `translateY(${
-                        idx % 2 === 0 ? -offset : offset
-                      }px)`,
-                    }}
-                  >
-                    {char}
-                  </span>
-                </motion.span>
-              );
-            })}
+                  {char}
+                </span>
+              </motion.span>
+            ))}
 
             <motion.span
               className="relative inline-block overflow-visible px-1"
@@ -150,7 +145,7 @@ export default function Page() {
           </h2>
 
           <h3
-            className="text-[18px] lg:text-[24px] leading-tight z-10 text-white"
+            className="text-[18px] lg:text-[22px] leading-tight z-10 text-white"
             style={{
               WebkitTextStroke: "0.5px ",
               color: "#b4dbdc",

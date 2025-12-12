@@ -9,7 +9,7 @@ const experienceData = [
   {
     type: "Internship",
     position: "Information Systems Intern",
-    company: "Rectorate, Universitas Jenderal Achmad Yani",
+    company: "Rectorate of Universitas Jenderal Achmad Yani ",
     year: "Cimahi, August 2024 – September 2024",
     gallery: ["/experience/i1a.jpg", "/experience/i1b.jpg"],
     description:
@@ -18,7 +18,7 @@ const experienceData = [
   {
     type: "Internship",
     position: "Field Work Practice",
-    company: "PT. Hitachi Chemical Indonesia",
+    company: "PT Hitachi Chemical Indonesia",
     year: "Karawang, October 2019 – December 2019",
     certificate: ["/experience/i2a.png", "/experience/i2c.png"],
     description:
@@ -28,8 +28,8 @@ const experienceData = [
   // Teaching Assistant
   {
     type: "Teaching Assistant",
-    position: "Teaching Assistant – Computer Education Practicum",
-    company: "Law Study Program, Universitas Jenderal Achmad Yani",
+    position: "Teaching Assistant",
+    company: "Law Study Program at UNJANI",
     year: "Cimahi, July 2025",
     gallery: [
       "/experience/t2a.png",
@@ -42,9 +42,8 @@ const experienceData = [
   },
   {
     type: "Teaching Assistant",
-    position: "Teaching Assistant – Computer Applications Practicum",
-    company:
-      "Informatics Engineering Study Program, Universitas Jenderal Achmad Yani",
+    position: "Teaching Assistant",
+    company: "Informatics Engineering Study Program at UNJANI",
     year: "Cimahi, October 2022 – December 2022",
     certificate: ["/experience/t1a.png"],
     description:
@@ -54,18 +53,21 @@ const experienceData = [
   // Training
   {
     type: "Training",
-    position: "Project Management Participant – Google Career Certificate",
-    company:
-      "Kementerian Komunikasi dan Informatika Republik Indonesia (KOMDIGI)",
+    position: "Project Management (DTS 2025) ",
+    company: "Google x Kementerian Komunikasi dan Digital (Komdigi)",
     year: "Karawang, October 2025 – Present",
-    certificate: ["/experience/p1a.png", "/experience/p1b.png"],
+    certificate: [
+      "/experience/p1a.png",
+      "/experience/p1b.png",
+      "/experience/p1c.png",
+      "/experience/p1d.png",
+    ],
     description:
-      "Currently progressing in the Google Project Management Learning Path at the Intermediate level. The program builds on fundamental project management skills, covering risk management, quality control, digital project tools, and practical application through case studies. It integrates AI essentials to enhance productivity and responsible use of AI in project planning and execution. Focused on applying theory to real-world project scenarios while developing competencies in project initiation, planning, and execution.",
+      "Participated in an intensive online Project Management training through the Fresh Graduate Academy (Digital Talent Scholarship 2025), completing a structured four-stage Learning Path from Micro Skills to Final Course with certification. Developed practical project management skills and supporting competencies in AI Essentials, including AI fundamentals, productivity techniques with AI tools, prompt engineering, and ethical AI usage.",
   },
   {
     type: "Training",
-    position:
-      "Full-Stack Developer Participant – Studi Independen Bersertifikat Dicoding x Kampus Merdeka Cycle 5 Program ",
+    position: "Full-Stack Developer (SIB x Kampus Merdeka Cycle 5)",
     company: "Dicoding Indonesia (PT Presentologics)",
     year: "Bandung, August 2023 – December 2023",
     gallery: [
@@ -85,9 +87,8 @@ const experienceData = [
   // Organization
   {
     type: "Organization",
-    position: "Committee – New Student Orientation",
-    company:
-      "Informatics Engineering Study Program, Universitas Jenderal Achmad Yani",
+    position: "Committee Member (New Student Orientation)",
+    company: "Informatics Engineering Study Program at UNJANI",
     year: "Cimahi, July 2024",
     gallery: ["/experience/o1.jpg", "/experience/o2.jpg", "/experience/o3.jpg"],
     description:
