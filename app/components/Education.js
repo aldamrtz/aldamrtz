@@ -130,10 +130,10 @@ export default function Education() {
                   className="bg-white border-gray-300 p-4 rounded-lg shadow-md hover:shadow-lg hover:bg-[#ffffb0] transform hover:-translate-y-1 transition-all duration-300 relative"
                 >
                   <ExternalLink className="w-5 h-5 text-[#0f2e51] absolute bottom-3 right-3" />
-                  <h4 className="text-sm font-semibold text-[#0f2e51] mt-1">
+                  <h4 className="text-sm font-semibold text-[#0f2e51]">
                     {pub.title}
                   </h4>
-                  <p className="text-[#0f2e51] text-sm font-medium">
+                  <p className="text-[#0f2e51] text-sm font-medium mt-1">
                     {pub.journal}
                   </p>
                   <p className="text-[#b4dbdc] font-medium text-xs mt-1">
