@@ -57,7 +57,7 @@ export default function Page() {
         <div className="flex flex-col items-center text-left z-10">
           <div className="flex items-center gap-4">
             <div
-              className="flex flex-col mt-4 sm:mt-8 lg:mt-10 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
+              className="flex flex-col mt-2 sm:mt-8 lg:mt-10 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
               style={{ WebkitTextStroke: "0.5px #ffbd4a", color: "#ffffb0" }}
             >
               <span>Hey! You’ve just</span>
@@ -81,7 +81,7 @@ export default function Page() {
           </div>
 
           <h2
-            className="mt-17 relative text-5xl lg:text-8xl font-bold z-10"
+            className="mt-15 lg:mt-17 relative text-5xl lg:text-8xl font-bold z-10"
             style={{
               position: "relative",
               color: "#eb5c74",
@@ -95,6 +95,7 @@ export default function Page() {
                 key={idx}
                 style={{
                   display: "inline-block",
+                  verticalAlign: "middle",
                   position: "relative",
                   overflow: "hidden",
                   lineHeight: 1,
@@ -116,20 +117,35 @@ export default function Page() {
             ))}
 
             <motion.span
-              className="relative inline-block overflow-visible px-1"
-              initial={{ rotate: -180, scale: 0, y: isMobile ? -5 : -18 }}
-              animate={{ rotate: 0, scale: 1, y: isMobile ? -5 : -18 }}
+              initial={{ rotate: -180, scale: 0 }}
+              animate={{ rotate: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              style={{ display: "inline-block" }}
+              style={{
+                display: "inline-block",
+                verticalAlign: "middle",
+                position: "relative",
+              }}
             >
-              O
+              <span
+                style={{
+                  display: "inline-block",
+                  position: "relative",
+                  zIndex: 2,
+                }}
+              >
+                O
+              </span>
+
               <svg
                 className="absolute transition-transform duration-700 ease-in-out hover:rotate-[180deg]"
                 style={{
-                  left: isMobile ? "-11%" : "-19%",
-                  top: isMobile ? "-10%" : "-16%",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
                   width: isMobile ? "120%" : "140%",
                   height: isMobile ? "120%" : "140%",
+                  zIndex: 2,
+                  pointerEvents: "none",
                 }}
                 viewBox="0 0 100 100"
                 preserveAspectRatio="xMidYMid meet"
@@ -139,15 +155,18 @@ export default function Page() {
             </motion.span>
 
             <motion.span
-              initial={{ y: 2, opacity: 0 }}
-              animate={{ y: -5, opacity: 1 }}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.0, duration: 0.5 }}
-              style={{ display: "inline-block" }}
+              style={{
+                display: "inline-block",
+                verticalAlign: "middle",
+              }}
             >
               !
             </motion.span>
           </h2>
-          <div className="w-full flex justify-start">
+          <div className="w-full flex justify-start mt-2 lg:mt-2">
             <h3
               className="text-lg leading-tight z-10"
               style={{
