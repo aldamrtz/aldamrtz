@@ -104,10 +104,7 @@ export default function Footer() {
               for scrolling this far! Who knows,
             </p>
 
-            <div
-              className="text-md leading-tight mt-[2px] relative"
-              style={{ top: "-1px" }}
-            >
+            <div className="text-md leading-tight mt-[3px] relative">
               <div className="flex items-end font-semibold justify-center lg:justify-start flex-wrap">
                 <p
                   className="relative top-[0.10rem] lg:top-[-0.8rem]"
@@ -148,16 +145,6 @@ export default function Footer() {
                 }}
               >
                 EXCITING!{" "}
-                <span
-                  className="font-medium"
-                  style={{
-                    fontFamily: "'Brittany Signature', cursive",
-                    color: "#a5c882",
-                    WebkitTextStroke: "1px #6f8757",
-                  }}
-                >
-                  -Alda
-                </span>
               </p>
             </div>
           </div>

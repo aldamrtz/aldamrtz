@@ -54,25 +54,29 @@ export default function Page() {
           backgroundColor: "#0f2e51",
         }}
       >
-        <div className="flex flex-col items-start text-left z-10">
+        <div className="flex flex-col items-center text-left z-10">
           <div className="flex items-center gap-4">
             <div
-              className="flex flex-col text-[18px] lg:text-[22px] leading-tight"
+              className="flex flex-col mt-4 sm:mt-8 lg:mt-10 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
               style={{ WebkitTextStroke: "0.5px #ffbd4a", color: "#ffffb0" }}
             >
               <span>Hey! You’ve just</span>
-              <span>landed on</span>
+
+              <span className="relative mt-1 sm:mt-2 lg:mt-[7px]">
+                landed on
+              </span>
             </div>
 
             <div
-              className="font-medium text-7xl lg:text-[6rem] leading-none flex items-center -ml-13 lg:-ml-15 -translate-y-[-30px] lg:translate-y-[45px]"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[100%]
+             font-medium text-7xl lg:text-[6rem] leading-none z-100"
               style={{
                 fontFamily: "'Brittany Signature', cursive",
                 color: "#a5c882",
                 WebkitTextStroke: "2px #6f8757",
               }}
             >
-              <span>Alda’s</span>
+              <span>alda’s</span>
             </div>
           </div>
 
@@ -143,28 +147,29 @@ export default function Page() {
               !
             </motion.span>
           </h2>
-
-          <h3
-            className="text-[18px] lg:text-[22px] leading-tight z-10 text-white"
-            style={{
-              WebkitTextStroke: "0.5px ",
-              color: "#b4dbdc",
-            }}
-          >
-            <Typewriter
-              words={[
-                "Software Engineer",
-                "Web Developer",
-                "Full-Stack Enthusiast",
-              ]}
-              loop={true}
-              cursor
-              cursorStyle="|"
-              typeSpeed={80}
-              deleteSpeed={50}
-              delaySpeed={2000}
-            />
-          </h3>
+          <div className="w-full flex justify-start">
+            <h3
+              className="text-lg leading-tight z-10"
+              style={{
+                WebkitTextStroke: "0.5px ",
+                color: "#b4dbdc",
+              }}
+            >
+              <Typewriter
+                words={[
+                  "Software Engineer",
+                  "Web Developer",
+                  "Full-Stack Enthusiast",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </h3>
+          </div>
         </div>
       </section>
 
