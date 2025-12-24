@@ -10,7 +10,7 @@ const experienceData = [
     type: "Internship",
     position: "Information Systems Intern",
     company: "Rectorate of Universitas Jenderal Achmad Yani ",
-    year: "Cimahi, August 2024 – September 2024",
+    year: "Cimahi, Aug 2024 – Sep 2024",
     gallery: ["/experience/i1a.jpg", "/experience/i1b.jpg"],
     description:
       "Developed a web-based application to manage account and subdomain requests at Universitas Jenderal Achmad Yani, including system analysis, UI/UX design, Black Box and User Acceptance Testing (92% student and 88% admin satisfaction), and preparation of technical documentation for implementation.",
@@ -19,7 +19,7 @@ const experienceData = [
     type: "Internship",
     position: "Field Work Practice",
     company: "PT Hitachi Chemical Indonesia",
-    year: "Karawang, October 2019 – December 2019",
+    year: "Karawang, Oct 2019 – Dec 2019",
     certificate: ["/experience/i2a.png", "/experience/i2c.png"],
     description:
       "Managed daily production line tasks at PT. Hitachi Chemical Indonesia, including preparing worksheets and Process Control Sheets, summarizing production data for Plant 1 and Plant 2, handling around 150 physical documents, and participating in 5S initiatives to ensure workplace efficiency and organization.",
@@ -30,7 +30,7 @@ const experienceData = [
     type: "Teaching Assistant",
     position: "Teaching Assistant",
     company: "Law Study Program at UNJANI",
-    year: "Cimahi, July 2025",
+    year: "Cimahi, Jul 2025",
     gallery: [
       "/experience/t2a.png",
       "/experience/t2b.jpg",
@@ -44,7 +44,7 @@ const experienceData = [
     type: "Teaching Assistant",
     position: "Teaching Assistant",
     company: "Informatics Engineering Study Program at UNJANI",
-    year: "Cimahi, October 2022 – December 2022",
+    year: "Cimahi, Oct 2022 – Dec 2022",
     certificate: ["/experience/t1a.png"],
     description:
       "Assisted 30+ students in understanding practicum materials and exercises, focusing on Microsoft Word, Excel, and PowerPoint. Provided support by answering questions, facilitating learning during sessions, preparing practicum materials, coordinating with lecturers, and evaluating students’ practicum reports.",
@@ -55,7 +55,7 @@ const experienceData = [
     type: "Training",
     position: "Project Management (DTS 2025) ",
     company: "Google x Kementerian Komunikasi dan Digital (Komdigi)",
-    year: "Karawang, October 2025 – Present",
+    year: "Karawang, Oct 2025 – Dec 2025",
     certificate: [
       "/experience/p1a.png",
       "/experience/p1b.png",
@@ -69,7 +69,7 @@ const experienceData = [
     type: "Training",
     position: "Full-Stack Developer (SIB x Kampus Merdeka Cycle 5)",
     company: "Dicoding Indonesia (PT Presentologics)",
-    year: "Bandung, August 2023 – December 2023",
+    year: "Bandung, Aug 2023 – Dec 2023",
     gallery: [
       "/experience/p2a.png",
       "/experience/p2b.png",
@@ -89,7 +89,7 @@ const experienceData = [
     type: "Organization",
     position: "Committee Member (New Student Orientation)",
     company: "Informatics Engineering Study Program at UNJANI",
-    year: "Cimahi, July 2024",
+    year: "Cimahi, Jul 2024",
     gallery: ["/experience/o1.jpg", "/experience/o2.jpg", "/experience/o3.jpg"],
     description:
       "Managed participant and staff needs, including meals and health, from preparation to distribution to ensure smooth event operations. Coordinated with team members across divisions to maintain organized and efficient processes, and supervised on-site activities while addressing any arising issues.",

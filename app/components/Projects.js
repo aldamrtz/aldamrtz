@@ -9,6 +9,7 @@ import {
   X,
   ExternalLink,
 } from "lucide-react";
+import { Pin } from "lucide-react";
 
 const projectsData = [
   {
@@ -31,6 +32,7 @@ const projectsData = [
   },
   {
     title: "AccessTrack",
+    pinned: true,
     category: "Web Development",
     description:
       "A web-based application designed to streamline the account and subdomain request process at Jenderal Achmad Yani University. The platform features dual user roles (user and admin), where users can submit requests for email or subdomain creation and track their progress through a unique access code.",
@@ -97,6 +99,7 @@ const projectsData = [
   },
   {
     title: "EDFA ID",
+    pinned: true,
     category: "Web Development",
     description:
       "A web-based educational platform designed to introduce and explore Indonesia’s diverse fauna. The application features dual user roles (user and admin), where users can browse detailed information about various animal species categorized by name, island, type, habitat, population, and description. It also includes an interactive quiz system with scoring and leaderboards to enhance learning engagement, while the admin panel enables efficient management of fauna data and quiz content through CRUD operations.",
@@ -243,11 +246,17 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
   const [currentImg, setCurrentImg] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
-  const filteredProjects =
+  const filteredProjects = (
     activeTab === "All"
       ? projectsData
-      : projectsData.filter((p) => p.category === activeTab);
+      : projectsData.filter((p) => p.category === activeTab)
+  ).sort((a, b) => (b.pinned === true) - (a.pinned === true));
+
+  const visibleProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   const nextImage = () => {
     if (selected) {
@@ -308,7 +317,10 @@ export default function Projects() {
         {tabs.map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => {
+              setActiveTab(tab);
+              setShowAll(false);
+            }}
             className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer ${
               activeTab === tab
                 ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
@@ -321,7 +333,7 @@ export default function Projects() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 40 }}
@@ -342,6 +354,12 @@ export default function Projects() {
                 src={project.images[0]}
                 className="w-full h-48 object-cover rounded-t-xl transition-transform duration-500 group-hover:scale-110"
               />
+              {project.pinned && (
+                <div className="absolute top-2 left-2 bg-[#eb5c74] p-2 rounded-full shadow-md">
+                  <Pin className="w-3.5 h-3.5 text-white" />
+                </div>
+              )}
+
               <span
                 className="absolute top-2 right-2 text-white text-xs px-3 py-1 rounded-full shadow-md"
                 style={{ backgroundColor: "#7f6e9e" }}
@@ -401,6 +419,29 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {filteredProjects.length > 6 && !showAll && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(true)}
+            className="px-4 py-2 text-sm rounded-md font-medium transition cursor-pointer"
+            style={{
+              backgroundColor: "#eb5c74",
+              color: "#ffffff",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#f6b7c1";
+              e.currentTarget.style.color = "#eb5c74";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#eb5c74";
+              e.currentTarget.style.color = "#ffffff";
+            }}
+          >
+            Load more
+          </button>
+        </div>
+      )}
 
       <AnimatePresence>
         {selected && (
