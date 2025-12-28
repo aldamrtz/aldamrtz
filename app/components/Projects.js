@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Github,
-  ChevronLeft,
-  ChevronRight,
-  X,
-  ExternalLink,
-} from "lucide-react";
+import { Github, X, ExternalLink } from "lucide-react";
 import { Pin } from "lucide-react";
 
 const projectsData = [
@@ -245,7 +239,7 @@ export default function Projects() {
   ];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
-  const [currentImg, setCurrentImg] = useState(0);
+  const [setCurrentImg] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = (
@@ -258,62 +252,44 @@ export default function Projects() {
     ? filteredProjects
     : filteredProjects.slice(0, 6);
 
-  const nextImage = () => {
-    if (selected) {
-      setCurrentImg((prev) => (prev + 1) % selected.images.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (selected) {
-      setCurrentImg(
-        (prev) => (prev - 1 + selected.images.length) % selected.images.length
-      );
-    }
-  };
-
   return (
-    <section
-      id="projects"
-      className="max-w-6xl mx-auto py-15 px-4 bg-[#0f2e51]"
-    >
-      <h2 className="flex items-center mb-10 justify-center gap-4">
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-
-        <span
-          className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
-          style={{
-            color: "#eb5c74",
-            WebkitTextStroke: "1px #c3224d",
-          }}
-        >
-          <span>Things</span>
+    <section id="projects" className=" py-10 px-15 bg-[#f1f5f9]">
+      <div className="relative bg-[#f1f5f9] py-10 overflow-hidden">
+        <div className="absolute inset-0 flex items-center mb-10 justify-center">
           <span
-            className="text-3xl lg:text-4xl"
+            className="uppercase text-[#ffffff] text-6xl sm:text-7xl lg:text-8xl tracking-widest"
             style={{
-              color: "#a5c882",
-              WebkitTextStroke: "1px #6f8757",
-              fontFamily: "'Brittany Signature', cursive",
-              fontWeight: "400",
-              lineHeight: "1",
-              transform: "translateY(4px)",
+              fontFamily: "'Anton', sans-serif",
             }}
           >
-            I’ve
+            Projects
           </span>
-          <span>Created</span>
-        </span>
+        </div>
 
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-      </h2>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
+          <h2
+            className="uppercase text-4xl lg:text-5xl text-[#0f2e51] mx-auto"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            Projects
+          </h2>
+          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#56718c] flex justify-center items-baseline gap-1">
+            <span>– What </span>
+            <span
+              style={{
+                fontFamily: "'Brittany Signature', cursive",
+                color: "#0f2e51",
+              }}
+              className="text-base sm:text-xl font-semibold"
+            >
+              I’ve
+            </span>
+            <span> Built</span>
+          </p>
+        </div>
+      </div>
 
-      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+      <div className="relative flex justify-center gap-6 mb-10 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -321,18 +297,29 @@ export default function Projects() {
               setActiveTab(tab);
               setShowAll(false);
             }}
-            className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer ${
-              activeTab === tab
-                ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
-                : "bg-white text-[#0f2e51] hover:bg-[#b4dbdc] hover:shadow-lg"
-            }`}
+            className="text-sm sm:text-base lg:text-lg font-medium transition-all duration-300 cursor-pointer pb-1 relative z-10"
           >
-            {tab}
+            <span
+              className={`${
+                activeTab === tab
+                  ? "text-[#0f2e51]"
+                  : "text-[#56718c] hover:text-[#0f2e51]"
+              }`}
+            >
+              {tab}
+            </span>
+            {activeTab === tab && (
+              <motion.div
+                layoutId="underline"
+                className="absolute left-0 bottom-0 w-full h-0.5 bg-[#0f2e51]"
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+              />
+            )}
           </button>
         ))}
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-10">
         {visibleProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -345,24 +332,24 @@ export default function Projects() {
               setSelected(project);
               setCurrentImg(0);
             }}
-            className="cursor-pointer bg-white border-2 rounded-xl shadow-md 
-             border-[#c2b5e3] hover:shadow-xl hover:border-[#7f6e9e] 
+            className="cursor-pointer bg-[#0f2e51] border-2 rounded-xl shadow-md 
+             border-[#0f2e51] hover:shadow-xl hover:border-[#b4dbdc] 
              transition-all duration-300 overflow-hidden group"
           >
             <div className="relative">
               <img
                 src={project.images[0]}
-                className="w-full h-48 object-cover rounded-t-xl transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-50 object-cover rounded-t-xl transition-transform duration-500"
               />
               {project.pinned && (
-                <div className="absolute top-2 left-2 bg-[#eb5c74] p-2 rounded-full shadow-md">
+                <div className="absolute top-2 left-2 bg-[#0f2e51] p-2 rounded-full shadow-md">
                   <Pin className="w-3.5 h-3.5 text-white" />
                 </div>
               )}
 
               <span
                 className="absolute top-2 right-2 text-white text-xs px-3 py-1 rounded-full shadow-md"
-                style={{ backgroundColor: "#7f6e9e" }}
+                style={{ backgroundColor: "#0f2e51" }}
               >
                 {project.category}
               </span>
@@ -372,7 +359,7 @@ export default function Projects() {
               <div className="flex justify-between items-center mb-2">
                 <h3
                   className="text-lg font-semibold"
-                  style={{ color: "#0f2e51" }}
+                  style={{ color: "#ffffff" }}
                 >
                   {project.title}
                 </h3>
@@ -384,12 +371,12 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <Github className="w-5 h-5 text-[#7f6e9e] hover:text-[#4e3f66] transition" />
+                    <Github className="w-5 h-5 text-[#b4dbdc] hover:text-[#ffffff] transition" />
                   </a>
                 )}
               </div>
 
-              <p className="text-sm line-clamp-2" style={{ color: "#0f2e51" }}>
+              <p className="text-sm line-clamp-2" style={{ color: "#ffffff" }}>
                 {project.description}
               </p>
 
@@ -399,8 +386,8 @@ export default function Projects() {
                     key={i}
                     className="text-xs font-medium px-2 py-1 rounded-full"
                     style={{
-                      backgroundColor: "#c2b5e3",
-                      color: "#3a2f53",
+                      backgroundColor: "#a5c882",
+                      color: "#0f2e51",
                     }}
                   >
                     {tech}
@@ -409,7 +396,7 @@ export default function Projects() {
                 {project.tech.length > 3 && (
                   <span
                     className="text-xs font-medium"
-                    style={{ color: "#b4dbdc" }}
+                    style={{ color: "#ffffb0" }}
                   >
                     +{project.tech.length - 3} more
                   </span>
@@ -421,24 +408,13 @@ export default function Projects() {
       </div>
 
       {filteredProjects.length > 6 && !showAll && (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center">
           <button
             onClick={() => setShowAll(true)}
-            className="px-4 py-2 text-sm rounded-md font-medium transition cursor-pointer"
-            style={{
-              backgroundColor: "#eb5c74",
-              color: "#ffffff",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#f6b7c1";
-              e.currentTarget.style.color = "#eb5c74";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#eb5c74";
-              e.currentTarget.style.color = "#ffffff";
-            }}
+            className="group text-sm sm:text-base lg:text-lg font-medium relative pb-1 cursor-pointer transition-colors duration-300 text-[#56718c] hover:text-[#0f2e51]"
           >
             Load more
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#56718c] transition-colors duration-300 group-hover:bg-[#0f2e51]" />
           </button>
         </div>
       )}
@@ -453,7 +429,7 @@ export default function Projects() {
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="bg-white rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
+              className="bg-[#0f2e51] rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -480,7 +456,7 @@ export default function Projects() {
                 <div className="flex items-center gap-2 mb-1">
                   <h3
                     className="text-lg font-semibold"
-                    style={{ color: "#0f2e51" }}
+                    style={{ color: "#ffffff" }}
                   >
                     {selected.title}
                   </h3>
@@ -502,11 +478,11 @@ export default function Projects() {
                 <div>
                   <h4
                     className="text-lg font-semibold mb-1"
-                    style={{ color: "#0f2e51" }}
+                    style={{ color: "#ffffff" }}
                   >
                     Project Overview
                   </h4>
-                  <p className="leading-relaxed" style={{ color: "#0f2e51" }}>
+                  <p className="leading-relaxed" style={{ color: "#ffffff" }}>
                     {selected.description}
                   </p>
                   <div className="flex gap-2 mt-2 flex-wrap">
@@ -517,16 +493,16 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
-                          backgroundColor: "#0f2e51",
-                          color: "#ffffff",
+                          backgroundColor: "#b4dbdc",
+                          color: "#0f2e51",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#b4dbdc";
+                          e.currentTarget.style.backgroundColor = "#ffffff";
                           e.currentTarget.style.color = "#0f2e51";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#0f2e51";
-                          e.currentTarget.style.color = "#ffffff";
+                          e.currentTarget.style.backgroundColor = "#b4dbdc";
+                          e.currentTarget.style.color = "#0f2e51";
                         }}
                       >
                         <Github className="w-4 h-4" />
@@ -541,16 +517,16 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
-                          backgroundColor: "#eb5c74",
-                          color: "#ffffff",
+                          backgroundColor: "#ffffb0",
+                          color: "#0f2e51",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#f6b7c1";
-                          e.currentTarget.style.color = "#eb5c74";
+                          e.currentTarget.style.backgroundColor = "#ffffff";
+                          e.currentTarget.style.color = "#0f2e51";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#eb5c74";
-                          e.currentTarget.style.color = "#ffffff";
+                          e.currentTarget.style.backgroundColor = "#ffffb0";
+                          e.currentTarget.style.color = "#0f2e51";
                         }}
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -563,7 +539,7 @@ export default function Projects() {
                 <div>
                   <p
                     className="text-lg font-semibold mb-2"
-                    style={{ color: "#0f2e51" }}
+                    style={{ color: "#ffffff" }}
                   >
                     Tech Used:
                   </p>
@@ -574,8 +550,8 @@ export default function Projects() {
                         key={i}
                         className="text-xs font-medium px-2 py-1 rounded-full"
                         style={{
-                          backgroundColor: "#c2b5e3",
-                          color: "#3a2f53",
+                          backgroundColor: "#a5c882",
+                          color: "#0f2e51",
                         }}
                       >
                         {tech}

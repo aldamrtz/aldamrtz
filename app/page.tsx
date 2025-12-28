@@ -57,19 +57,17 @@ export default function Page() {
         <div className="flex flex-col items-center text-left z-10">
           <div className="flex items-center gap-4">
             <div
-              className="flex flex-col mt-2 sm:mt-8 lg:mt-10 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
-              style={{ WebkitTextStroke: "0.5px #ffbd4a", color: "#ffffb0" }}
+              className="flex flex-col mt-6 sm:mt-12 lg:mt-16 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
+              style={{ WebkitTextStroke: "0.5px ", color: "#ffffff" }}
             >
               <span>Hey! You’ve just</span>
-
               <span className="relative mt-1 sm:mt-2 lg:mt-[7px]">
                 landed on
               </span>
             </div>
 
             <div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[100%]
-             font-medium text-7xl lg:text-[6rem] leading-none z-100"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[90%] lg:-translate-y-[85%] text-7xl lg:text-[6rem] leading-none z-100"
               style={{
                 fontFamily: "'Brittany Signature', cursive",
                 color: "#a5c882",
@@ -80,98 +78,44 @@ export default function Page() {
             </div>
           </div>
 
-          <h2
-            className="mt-15 lg:mt-17 relative text-5xl lg:text-8xl font-bold z-10"
-            style={{
-              position: "relative",
-              color: "#eb5c74",
-              WebkitTextStroke: "3px #c3224d",
-              letterSpacing: "0.05em",
-              lineHeight: 1,
-            }}
-          >
-            {["P", "O", "R", "T", "F", "O", "L", "I"].map((char, idx) => (
-              <motion.span
-                key={idx}
-                style={{
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                  position: "relative",
-                  overflow: "hidden",
-                  lineHeight: 1,
-                }}
-                variants={letterVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-              >
-                <span
+          <h2 className="mt-5 lg:mt-5 relative text-7xl lg:text-9xl z-10">
+            {["P", "O", "R", "T", "F", "O", "L", "I", "O", "!"].map(
+              (char, idx) => (
+                <motion.span
+                  key={idx}
                   style={{
-                    display: "block",
-                    transform: `translateY(0px)`,
+                    fontFamily: "'Anton', sans-serif",
+                    letterSpacing: "0.05em",
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    position: "relative",
+                    overflow: "hidden",
+                    color: "#ffffff",
+                    lineHeight: 1,
                   }}
+                  variants={letterVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
                 >
-                  {char}
-                </span>
-              </motion.span>
-            ))}
-
-            <motion.span
-              initial={{ rotate: -180, scale: 0 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              style={{
-                display: "inline-block",
-                verticalAlign: "middle",
-                position: "relative",
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-block",
-                  position: "relative",
-                  zIndex: 2,
-                }}
-              >
-                O
-              </span>
-
-              <svg
-                className="absolute transition-transform duration-700 ease-in-out hover:rotate-[180deg]"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: isMobile ? "120%" : "140%",
-                  height: isMobile ? "120%" : "140%",
-                  zIndex: 2,
-                  pointerEvents: "none",
-                }}
-                viewBox="0 0 100 100"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <image href="/star.png" width="100" height="100" />
-              </svg>
-            </motion.span>
-
-            <motion.span
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1.0, duration: 0.5 }}
-              style={{
-                display: "inline-block",
-                verticalAlign: "middle",
-              }}
-            >
-              !
-            </motion.span>
+                  <span
+                    style={{
+                      display: "block",
+                      transform: `translateY(0px)`,
+                    }}
+                  >
+                    {char}
+                  </span>
+                </motion.span>
+              )
+            )}
           </h2>
           <div className="w-full flex justify-start mt-2 lg:mt-2">
             <h3
-              className="text-lg leading-tight z-10"
+              className="text-sm sm:text-base lg:text-lg leading-tight z-10"
               style={{
                 WebkitTextStroke: "0.5px ",
-                color: "#b4dbdc",
+                color: "#a5c882",
               }}
             >
               <Typewriter
@@ -197,14 +141,6 @@ export default function Page() {
           <AboutMe />
         </section>
 
-        <section id="education">
-          <Education />
-        </section>
-
-        <section id="skills">
-          <Skills />
-        </section>
-
         <section id="experience">
           <Experience />
         </section>
@@ -226,15 +162,15 @@ export default function Page() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-[#eb5c74] hover:bg-[#c3224d] 
-    text-white rounded-full p-4 shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center"
+          className="fixed bottom-6 right-6 z-50 bg-[#a5c882] hover:bg-[#6f8757] 
+    hover:text-white text-[#0f2e51] rounded-full p-4 shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center"
           style={{
             width: "45px",
             height: "45px",
           }}
           aria-label="Scroll to top"
         >
-          <ArrowUp className="w-6 h-6" />
+          <ArrowUp strokeWidth={4.5} className="w-6 h-6 " />
         </button>
       )}
     </div>

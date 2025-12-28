@@ -18,14 +18,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Alda's Portfolio",
-  description: "Portfolio of Alda Amorita Azza",
-  icons: {
-    icon: "/icon.png",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -284,50 +284,49 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="max-w-5xl mx-auto py-15 px-4 bg-[#0f2e51]"
+      className="mx-auto py-10 px-3 lg:px-15 bg-[#0f2e51]"
     >
-      <h2 className="flex items-center mb-10 justify-center gap-4">
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-
-        <span
-          className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
-          style={{
-            color: "#eb5c74",
-            WebkitTextStroke: "1px #c3224d",
-          }}
-        >
-          <span>Certifications</span>
+      <div className="relative bg-[#0f2e51] py-10 overflow-hidden">
+        <div className="absolute inset-0 flex items-center mb-10 justify-end">
           <span
-            className="text-3xl lg:text-4xl"
+            className="uppercase text-[#3b5a7c] text-6xl sm:text-7xl lg:text-8xl tracking-widest"
             style={{
-              color: "#a5c882",
-              WebkitTextStroke: "1px #6f8757",
-              fontFamily: "'Brittany Signature', cursive",
-              fontWeight: "400",
-              lineHeight: "1",
-              transform: "translateY(4px)",
+              fontFamily: "'Anton', sans-serif",
             }}
           >
-            I’ve
+            Certifications
           </span>
-          <span>Earned</span>
-        </span>
+        </div>
 
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-      </h2>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-right">
+          <h2
+            className="uppercase text-4xl lg:text-5xl text-[#ffffff]"
+            style={{ fontFamily: "'Anton', sans-serif" }}
+          >
+            Certifications
+          </h2>
+          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#b4dbdc] flex justify-end items-baseline gap-1">
+            <span>– Certifications </span>
+            <span
+              style={{
+                fontFamily: "'Brittany Signature', cursive",
+                color: "#ffffff",
+              }}
+              className="text-base sm:text-xl font-semibold"
+            >
+              I’ve
+            </span>
+            <span> Earned</span>
+          </p>
+        </div>
+      </div>
 
-      <div className="flex justify-center gap-4 mb-10 flex-wrap">
+      <div className="flex justify-end gap-4 mb-10 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer ${
+            className={`px-4 py-2 font-medium transition cursor-pointer ${
               activeTab === tab
                 ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
                 : "bg-white text-[#0f2e51] hover:bg-[#b4dbdc] hover:shadow-lg"
@@ -345,7 +344,7 @@ export default function Certifications() {
         grid={{ rows: 2, fill: "row" }}
         spaceBetween={35}
         speed={1000}
-        className="pb-20 px-6 overflow-visible relative z-10"
+        className="pb-0 px-6 overflow-visible relative z-10"
         breakpoints={{
           0: {
             slidesPerView: 2,

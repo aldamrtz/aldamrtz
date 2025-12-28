@@ -80,87 +80,84 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto py-20 px-4">
-      <h2 className="flex items-center mb-12 justify-center gap-4">
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-        <span
-          className="text-2xl lg:text-3xl font-semibold flex gap-2 items-end"
-          style={{ color: "#eb5c74", WebkitTextStroke: "1px #c3224d" }}
-        >
-          <span>Get in</span>
-          <span
-            className="text-3xl lg:text-4xl"
-            style={{
-              color: "#a5c882",
-              WebkitTextStroke: "1px #6f8757",
-              fontFamily: "'Brittany Signature', cursive",
-              fontWeight: "400",
-              lineHeight: "1",
-              transform: "translateY(4px)",
-            }}
-          >
-            Touch
-          </span>
-        </span>
-        <span
-          className="flex-1 h-px"
-          style={{ backgroundColor: "#b4dbdc" }}
-        ></span>
-      </h2>
+    <section id="contact" className="max-w-6xl mx-auto py-10 px-4">
+      <div className="w-screen relative left-1/2 -translate-x-1/2 bg-[#a5c882] py-4 mb-16">
+        <div className="flex whitespace-nowrap gap-8 justify-center">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={i}
+              className="uppercase sm:text-lg lg:text-lg tracking-widest"
+              style={{
+                fontFamily: "'Anton', sans-serif",
+                color: "#1D2A62",
+              }}
+            >
+              CONTACT ME
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         <div className="flex flex-col gap-6">
-          {socialLinks.map(({ name, username, icon: Icon, link }) => (
-            <a
-              key={name}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-white border-2 border-[#b4dbdc] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
+          <div className="relative -mt-5">
+            <div className="absolute inset-0 flex items-center justify-start pl-4 mb-7">
+              <span
+                className="uppercase text-[#ffffff] text-6xl sm:text-6xl lg:text-7xl tracking-widest opacity-10 pointer-events-none"
+                style={{
+                  fontFamily: "'Anton', sans-serif",
+                }}
+              >
+                Get in Touch
+              </span>
+            </div>
+
+            <div className="relative z-10 text-left pl-4">
+              <h2
+                className="uppercase text-5xl text-[#ffffff] mt-7"
+                style={{ fontFamily: "'Anton', sans-serif" }}
+              >
+                Get in Touch
+              </h2>
+              <p className="text-sm text-[#ffffff] mt-2">
+                Feel free to reach out via social media or send me a message!
+              </p>
+            </div>
+          </div>
+
+          {socialLinks.map(({ name, username, icon: Icon }) => (
+            <div key={name} className="flex items-center gap-4">
+              <div className="ml-3 w-12 h-12 flex bg-[#a5c882] items-center justify-center rounded-full text-[#0f2e51]">
                 <Icon />
               </div>
-
               <div className="flex flex-col">
-                <span className="font-semibold text-lg text-[#0f2e51]">
+                <span className="font-semibold text-lg text-[#ffffff]">
                   {name}
                 </span>
-                <span className="text-sm" style={{ color: "#b4dbdc" }}>
+                <span className="text-sm" style={{ color: "#a5c882" }}>
                   {name === "Email"
                     ? username
                     : username.split("/").filter(Boolean).pop()}
                 </span>
               </div>
-            </a>
+            </div>
           ))}
 
-          <div className="flex flex-wrap gap-6">
-            {bottomLinks.map(({ name, username, icon: Icon, link }) => (
-              <a
-                key={name}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 min-w-[200px] flex items-center gap-4 bg-white border-2 border-[#b4dbdc] rounded-xl p-4 shadow-md transition-all duration-300 hover:scale-105 hover:border-[#0f2e51] hover:shadow-[0_4px_10px_#b4dbdc]/60"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[#b4dbdc] text-[#0f2e51]">
-                  <Icon size={36} className="w-7 h-7" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-lg text-[#0f2e51]">
-                    {name}
-                  </span>
-                  <span className="text-sm" style={{ color: "#b4dbdc" }}>
-                    {username.split("/").filter(Boolean).pop()}
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
+          {bottomLinks.map(({ name, username, icon: Icon }) => (
+            <div key={name} className="flex items-center gap-2">
+              <div className="ml-3 w-12 h-12 flex items-center bg-[#a5c882] justify-center rounded-full text-[#0f2e51]">
+                <Icon size={36} className="w-7 h-7" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-lg text-[#ffffff]">
+                  {name}
+                </span>
+                <span className="text-sm" style={{ color: "#a5c882" }}>
+                  {username.split("/").filter(Boolean).pop()}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
 
         {status && (
@@ -176,25 +173,25 @@ export default function Contact() {
           </div>
         )}
 
-        <div className="bg-white border-2 border-[#b4dbdc] rounded-xl p-6 shadow-md min-h-[408px] flex flex-col justify-between">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className=" rounded-xl p-4 min-h-[408px] flex flex-col justify-between">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
                 <input
                   type="text"
                   name="name"
                   placeholder=" "
-                  className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
-                    focus:outline-none focus:border focus:border-[#0f2e51] 
-                    hover:border-[#b4dbdc] transition-colors"
+                  className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
+    bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
+    hover:border-[#0f2e51] transition-colors"
                   required
                 />
                 <label
-                  className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
+                  className="absolute left-3 top-4 text-[#a5c882] text-sm px-1 
                     transition-all duration-300 pointer-events-none
-                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
-                    peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                    peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
+                    peer-placeholder-shown:top-4.5 peer-placeholder-shown:text-[#a5c882]
+                    peer-focus:left-0 peer-valid:left-0 peer-focus:-top-6.5 peer-focus:text-[#a5c882] peer-focus:text-sm
+                    peer-valid:-top-6.5 peer-valid:text-[#a5c882] peer-valid:text-sm"
                 >
                   Your Name
                 </label>
@@ -202,21 +199,20 @@ export default function Contact() {
 
               <div className="relative">
                 <input
-                  type="email"
-                  name="email"
+                  type="text"
+                  name="name"
                   placeholder=" "
-                  className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
-                    focus:outline-none focus:border focus:border-[#0f2e51] 
-                    hover:border-[#b4dbdc] transition-colors"
+                  className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
+    bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
+    hover:border-[#0f2e51] transition-colors"
                   required
                 />
                 <label
-                  className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1
+                  className="absolute left-3 top-4 text-[#a5c882] text-sm px-1 
                     transition-all duration-300 pointer-events-none
-                    peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
-                    peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:text-[#b4dbdc] peer-[&:not(:placeholder-shown)]:text-sm
-                    peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                    peer-focus:peer-[&:not(:placeholder-shown)]:text-[#0f2e51]"
+                    peer-placeholder-shown:top-4.5 peer-placeholder-shown:text-[#a5c882]
+                    peer-focus:left-0 peer-valid:left-0 peer-focus:-top-6.5 peer-focus:text-[#a5c882] peer-focus:text-sm
+                    peer-valid:-top-6.5 peer-valid:text-[#a5c882] peer-valid:text-sm"
                 >
                   Your Email
                 </label>
@@ -226,19 +222,19 @@ export default function Contact() {
             <div className="relative">
               <input
                 type="text"
-                name="subject"
+                name="name"
                 placeholder=" "
-                className="peer w-full border border-[#b4dbdc] rounded-lg p-3 
-                  focus:outline-none focus:border focus:border-[#0f2e51] 
-                  hover:border-[#b4dbdc] transition-colors"
+                className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
+    bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
+    hover:border-[#0f2e51] transition-colors"
                 required
               />
               <label
-                className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
+                className="absolute left-3 top-4 text-[#a5c882] text-sm px-1 
                   transition-all duration-300 pointer-events-none
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
-                  peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                  peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
+                  peer-placeholder-shown:top-4.5 peer-placeholder-shown:text-[#a5c882]
+                  peer-focus:left-0 peer-valid:left-0 peer-focus:-top-6.5 peer-focus:text-[#a5c882] peer-focus:text-sm
+                  peer-valid:-top-6.5 peer-valid:text-[#a5c882] peer-valid:text-sm"
               >
                 Subject
               </label>
@@ -249,17 +245,17 @@ export default function Contact() {
                 name="message"
                 rows="4"
                 placeholder=" "
-                className="peer w-full border border-[#b4dbdc] rounded-lg p-5 
-                  focus:outline-none focus:border focus:border-[#0f2e51] 
-                  hover:border-[#b4dbdc] transition-colors"
+                className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
+    bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
+    hover:border-[#0f2e51] transition-colors"
                 required
               ></textarea>
               <label
-                className="absolute left-3 top-4 text-[#b4dbdc] text-sm bg-white px-1 
+                className="absolute left-3 top-4 text-[#a5c882] text-sm px-1 
                   transition-all duration-300 pointer-events-none
-                  peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-[#b4dbdc]
-                  peer-focus:-top-2.5 peer-focus:text-[#0f2e51] peer-focus:text-sm
-                  peer-valid:-top-2.5 peer-valid:text-[#b4dbdc] peer-valid:text-sm"
+                  peer-placeholder-shown:top-4.5 peer-placeholder-shown:text-[#a5c882]
+                  peer-focus:left-0 peer-valid:left-0 peer-focus:-top-6.5 peer-focus:text-[#a5c882] peer-focus:text-sm
+                  peer-valid:-top-6.5 peer-valid:text-[#a5c882] peer-valid:text-sm"
               >
                 Your Message
               </label>
@@ -267,8 +263,8 @@ export default function Contact() {
 
             <button
               type="submit"
-              className={`bg-[#b4dbdc] text-white font-bold py-2 px-5 rounded-lg transition-colors w-full flex justify-center cursor-pointer items-center gap-2 ${
-                loading ? "cursor-not-allowed opacity-70" : "hover:bg-[#0f2e51]"
+              className={`bg-[#a5c882] text-[#0f2e51] py-4 px-5 rounded-lg transition-colors w-full flex justify-center cursor-pointer items-center -mt-2 ${
+                loading ? "cursor-not-allowed opacity-70" : "hover:bg-[#ffffff]"
               }`}
               disabled={loading}
             >

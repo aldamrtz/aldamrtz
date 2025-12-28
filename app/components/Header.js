@@ -12,8 +12,6 @@ export default function Header() {
 
   const navItems = [
     "About",
-    "Education",
-    "Skills",
     "Experience",
     "Projects",
     "Certifications",
@@ -71,33 +69,37 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-colors duration-500 ${
         menuOpen
-          ? "bg-[#eb5c74]"
+          ? "bg-[#b4dbdc]"
           : scrolled
-          ? "bg-[#eb5c74]/95 backdrop-blur-md shadow-md"
+          ? "bg-[#ffffff] backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
       <div
-        className="absolute bottom-0 left-0 h-[3px] bg-[#ffffb0] transition-all duration-150 ease-out"
+        className="absolute bottom-0 left-0 h-[3px] bg-[#b4dbdc] transition-all duration-150 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
 
       <nav className="max-w-7xl mx-auto px-6 py-6 md:py-8 flex items-center justify-between">
         <div className="hidden md:flex flex-1 justify-center">
           <ul
-            className={`flex space-x-10 text-lg font-medium ${
-              scrolled ? "text-[#ffffb0]" : "text-[#b4dbdc]"
+            className={`flex space-x-4 text-lg font-medium ${
+              scrolled ? "text-[#0f2e51]" : "text-[#ffffff]"
             }`}
           >
             {navItems.map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className={`transition-colors duration-200 ${
-                    activeSection === item
-                      ? "text-[#b4dbdc]"
-                      : "hover:text-[#b4dbdc]"
-                  }`}
+                  className={`
+              px-4 py-2 rounded-md
+              transition-all duration-200
+              ${
+                activeSection === item
+                  ? "bg-[#0f2e51] text-[#ffffff]"
+                  : "hover:bg-white/10 hover:text-[#b4dbdc]"
+              }
+            `}
                 >
                   {item}
                 </a>
@@ -109,7 +111,7 @@ export default function Header() {
         <div className="md:hidden ml-auto">
           <button
             className={`focus:outline-none ${
-              scrolled ? "text-[#ffffb0]" : "text-[#b4dbdc]"
+              scrolled ? "text-[#0f2e51]" : "text-[#ffffff]"
             }`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
@@ -130,22 +132,23 @@ export default function Header() {
               />
 
               <motion.div
-                className="fixed top-0 right-0 h-screen w-70 bg-[#eb5c74] md:hidden z-50 shadow-md"
+                className="fixed top-0 right-0 h-screen w-70 bg-[#ffffff] md:hidden z-50 shadow-md"
                 initial={{ x: "100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "100%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <ul className="flex flex-col items-start py-10 pl-10 space-y-6 text-lg font-medium text-[#ffffb0]">
+                <ul className="flex flex-col items-start py-10 pl-10 space-y-6 text-lg font-medium text-[#0f2e51]">
                   {navItems.map((item) => (
                     <li key={item} className="w-full">
                       <a
                         href={`#${item.toLowerCase()}`}
-                        className={`block w-full transition-colors duration-200 ${
-                          activeSection === item
-                            ? "text-[#b4dbdc]"
-                            : "hover:text-white"
-                        }`}
+                        className={`w-full px-4 py-2 rounded-md
+              transition-all duration-200 ${
+                activeSection === item
+                  ? "bg-[#0f2e51] text-[#ffffff]"
+                  : "hover:bg-white/10 hover:text-[#b4dbdc]"
+              }`}
                         onClick={() => setMenuOpen(false)}
                       >
                         {item}
