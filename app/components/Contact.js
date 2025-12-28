@@ -120,7 +120,8 @@ export default function Contact() {
                 Get in Touch
               </h2>
               <p className="text-sm text-[#ffffff] mt-2">
-                Feel free to reach out via social media or send me a message!
+                – Feel free to reach out via social media or send me a message
+                here!
               </p>
             </div>
           </div>
@@ -144,7 +145,7 @@ export default function Contact() {
           ))}
 
           {bottomLinks.map(({ name, username, icon: Icon }) => (
-            <div key={name} className="flex items-center gap-2">
+            <div key={name} className="flex items-center gap-4">
               <div className="ml-3 w-12 h-12 flex items-center bg-[#a5c882] justify-center rounded-full text-[#0f2e51]">
                 <Icon size={36} className="w-7 h-7" />
               </div>

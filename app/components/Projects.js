@@ -239,7 +239,7 @@ export default function Projects() {
   ];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
-  const [setCurrentImg] = useState(0);
+  const [currentImg, setCurrentImg] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = (
@@ -466,7 +466,7 @@ export default function Projects() {
                 </p>
               </div>
 
-              <div className="relative w-full max-h-[60vh] aspect-video bg-gray-100 rounded-b-xl overflow-hidden">
+              <div className="relative w-full max-h-[60vh] aspect-video bg-gray-100 overflow-hidden">
                 <img
                   src={selected.images[0]}
                   alt={selected.title}
