@@ -58,7 +58,7 @@ export default function Skills() {
         Tech & Tools
       </h2>
       <p className="text-xs lg:text-base text-[#b4dbdc] mb-5">
-        Tech and tools I use in my projects
+        Technologies and tools I actively use and learn
       </p>
 
       <motion.div
