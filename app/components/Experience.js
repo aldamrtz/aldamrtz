@@ -282,7 +282,7 @@ export default function Experience() {
 
                   <div className="w-full pl-14 -pr-1 lg:pr-15 relative text-left">
                     <div className="p-1 text-white">
-                      <h3 className="font-bold text-sm lg:text-base text-[#ffffb0]">
+                      <h3 className="font-bold text-sm lg:text-base mt-1 text-[#ffffb0]">
                         {exp.position}
                       </h3>
                       <div>
