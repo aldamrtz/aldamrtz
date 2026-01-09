@@ -102,6 +102,8 @@ const experienceData = [
       "/experience/p1b.png",
       "/experience/p1c.png",
       "/experience/p1d.png",
+      "/experience/p1e.png",
+      "/experience/p1f.png",
     ],
     description:
       "Participated in an intensive online Project Management training through the Fresh Graduate Academy (Digital Talent Scholarship 2025), completing a structured four-stage Learning Path from Micro Skills to Final Course with certification. Developed practical project management skills and supporting competencies in AI Essentials, including AI fundamentals, productivity techniques with AI tools, prompt engineering, and ethical AI usage.",
@@ -191,7 +193,7 @@ export default function Experience() {
             Experience
           </h2>
           <p className="mt-2 text-xs sm:text-base tracking-wide text-[#56718c] flex items-baseline gap-1">
-            <span>– learning along the</span>
+            <span>– Learning along the</span>
             <span
               style={{
                 fontFamily: "'Brittany Signature', cursive",

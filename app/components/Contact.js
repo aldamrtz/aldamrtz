@@ -176,7 +176,7 @@ export default function Contact() {
 
         <div className=" rounded-xl p-4 min-h-[408px] flex flex-col justify-between">
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6">
               <div className="relative">
                 <input
                   type="text"
@@ -200,8 +200,8 @@ export default function Contact() {
 
               <div className="relative">
                 <input
-                  type="text"
-                  name="name"
+                  type="email"
+                  name="email"
                   placeholder=" "
                   className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
     bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
