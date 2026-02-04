@@ -15,6 +15,13 @@ const certificationsData = [
     image: "/certifications/m1.png",
     link: "https://www.dicoding.com/certificates/4EXG3M6LDZRL",
   },
+  {
+    category: "Mobile Development",
+    name: "Memulai Pemrograman dengan Dart",
+    year: "2026",
+    image: "/certifications/pro6.png",
+    link: "https://www.dicoding.com/certificates/1RXYQG9QQZVM",
+  },
 
   // AI
   {
@@ -89,6 +96,14 @@ const certificationsData = [
     image: "/certifications/web1.png",
     link: "https://www.dicoding.com/certificates/KEXL7O2R0XG2",
   },
+
+  {
+    category: "Web Development",
+    name: "Learn Back-End for Beginners with Python",
+    year: "2025",
+    image: "/certifications/pro2.png",
+    link: "https://www.dicoding.com/certificates/81P2L098NZOY",
+  },
   {
     category: "Web Development",
     name: "Learn to Build Web Apps with React",
@@ -110,6 +125,14 @@ const certificationsData = [
     image: "/certifications/web3.png",
     link: "https://www.dicoding.com/certificates/98XWVKQ3LPM3",
   },
+
+  {
+    category: "Web Development",
+    name: "Learn the Basics of Web Programming",
+    year: "2023",
+    image: "/certifications/pro4.png",
+    link: "https://www.dicoding.com/certificates/N9ZO6WV96XG5",
+  },
   {
     category: "Web Development",
     name: "Getting Started with Programming Basics to Become a Software Developer",
@@ -117,29 +140,8 @@ const certificationsData = [
     image: "/certifications/web5.png",
     link: "https://www.dicoding.com/certificates/53XEN8QOYXRN",
   },
-  {
-    category: "Web Development",
-    name: "Introduction to Programming Logic (Programming Logic 101)",
-    year: "2023",
-    image: "/certifications/web6.png",
-    link: "https://www.dicoding.com/certificates/1OP803R5VXQK",
-  },
 
   // Programming
-  {
-    category: "Programming",
-    name: "Memulai Pemrograman dengan Dart",
-    year: "2026",
-    image: "/certifications/pro6.png",
-    link: "https://www.dicoding.com/certificates/1RXYQG9QQZVM",
-  },
-  {
-    category: "Programming",
-    name: "Learn Back-End for Beginners with Python",
-    year: "2025",
-    image: "/certifications/pro2.png",
-    link: "https://www.dicoding.com/certificates/81P2L098NZOY",
-  },
   {
     category: "Programming",
     name: "Getting Started with Python Programming",
@@ -156,17 +158,18 @@ const certificationsData = [
   },
   {
     category: "Programming",
-    name: "Learn the Basics of Web Programming",
-    year: "2023",
-    image: "/certifications/pro4.png",
-    link: "https://www.dicoding.com/certificates/N9ZO6WV96XG5",
-  },
-  {
-    category: "Programming",
     name: "Learn Git Basics with GitHub",
     year: "2023",
     image: "/certifications/pro5.png",
     link: "https://www.dicoding.com/certificates/N9ZO6VY6YXG5",
+  },
+
+  {
+    category: "Programming",
+    name: "Introduction to Programming Logic (Programming Logic 101)",
+    year: "2023",
+    image: "/certifications/web6.png",
+    link: "https://www.dicoding.com/certificates/1OP803R5VXQK",
   },
 
   // Cloud & DevOps

@@ -105,7 +105,7 @@ export default function Page() {
                     {char}
                   </span>
                 </motion.span>
-              )
+              ),
             )}
           </h2>
           <div className="w-full flex justify-start mt-2 lg:mt-2">
@@ -120,7 +120,7 @@ export default function Page() {
                 words={[
                   "Software Engineer",
                   "Web Developer",
-                  "Full-Stack Enthusiast",
+                  "Full-Stack Developer",
                 ]}
                 loop={true}
                 cursor

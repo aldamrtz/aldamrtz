@@ -155,7 +155,7 @@ const projectsData = [
     category: "Mobile Apps",
     description:
       "MyDay is a Flutter-based productivity application designed to help users organize their daily activities through task planning, habit tracking, and personal notes. The app features user authentication, daily planners, habit streak tracking, calendar-based activity overview, and note management, all stored locally with cross-platform support for mobile and web.",
-    images: ["/project/pm2.png"],
+    images: ["/project/pm3.png"],
     github: "https://github.com/aldamrtz/my_day",
     tech: [
       "Flutter",
@@ -165,6 +165,16 @@ const projectsData = [
       "CRUD Operations",
       "Android Studio",
     ],
+  },
+  {
+    title: "Dart Programming",
+    pinned: false,
+    category: "Mobile Apps",
+    description:
+      "A Dart-based command-line project that demonstrates core programming concepts including variables, control flow, collections, object-oriented programming, asynchronous processing, and exception handling. The project consists of multiple exam modules validated through automated unit testing to ensure correctness and adherence to Dart best practices.",
+    images: ["/project/pm2.png"],
+    github: "https://github.com/aldamrtz/a191-dart-code-submission",
+    tech: ["Dart", "Android Studio"],
   },
   {
     title: "CatatanKeuangan",
