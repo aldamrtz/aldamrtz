@@ -150,6 +150,23 @@ const projectsData = [
     tech: ["HTML", "CSS", "Bootstrap", "Visual Studio Code"],
   },
   {
+    title: "MyDay",
+    pinned: false,
+    category: "Mobile Apps",
+    description:
+      "MyDay is a Flutter-based productivity application designed to help users organize their daily activities through task planning, habit tracking, and personal notes. The app features user authentication, daily planners, habit streak tracking, calendar-based activity overview, and note management, all stored locally with cross-platform support for mobile and web.",
+    images: ["/project/pm2.png"],
+    github: "https://github.com/aldamrtz/my_day",
+    tech: [
+      "Flutter",
+      "Dart",
+      "SQLite",
+      "Hive",
+      "CRUD Operations",
+      "Android Studio",
+    ],
+  },
+  {
     title: "CatatanKeuangan",
     category: "Mobile Apps",
     description:

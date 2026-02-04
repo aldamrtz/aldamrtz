@@ -7,6 +7,15 @@ import "swiper/css";
 import "swiper/css/grid";
 
 const certificationsData = [
+  // Mobile Development
+  {
+    category: "Mobile Development",
+    name: "Belajar Membuat Aplikasi Flutter untuk Pemula",
+    year: "2026",
+    image: "/certifications/m1.png",
+    link: "https://www.dicoding.com/certificates/4EXG3M6LDZRL",
+  },
+
   // AI
   {
     category: "AI",
@@ -117,6 +126,13 @@ const certificationsData = [
   },
 
   // Programming
+  {
+    category: "Programming",
+    name: "Memulai Pemrograman dengan Dart",
+    year: "2026",
+    image: "/certifications/pro6.png",
+    link: "https://www.dicoding.com/certificates/1RXYQG9QQZVM",
+  },
   {
     category: "Programming",
     name: "Learn Back-End for Beginners with Python",
@@ -268,6 +284,7 @@ export default function Certifications() {
     "All",
     "AI",
     "Web Development",
+    "Mobile Development",
     "Programming",
     "Cloud & DevOps",
     "Project Management",

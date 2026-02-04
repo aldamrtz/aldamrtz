@@ -17,7 +17,6 @@ import {
   SiGit,
   SiDocker,
   SiKubernetes,
-  SiJenkins,
   SiFigma,
   SiCanva,
 } from "react-icons/si";
@@ -41,7 +40,6 @@ export default function Skills() {
     { name: "Git", icon: SiGit },
     { name: "Docker", icon: SiDocker },
     { name: "Kubernetes", icon: SiKubernetes },
-    { name: "Jenkins", icon: SiJenkins },
     { name: "Figma", icon: SiFigma },
     { name: "Canva", icon: SiCanva },
   ];
