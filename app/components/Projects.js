@@ -152,7 +152,7 @@ const projectsData = [
   {
     title: "MyDay",
     pinned: false,
-    category: "Mobile Apps",
+    category: "Mobile Development",
     description:
       "MyDay is a Flutter-based productivity application designed to help users organize their daily activities through task planning, habit tracking, and personal notes. The app features user authentication, daily planners, habit streak tracking, calendar-based activity overview, and note management, all stored locally with cross-platform support for mobile and web.",
     images: ["/project/pm3.png"],
@@ -169,7 +169,7 @@ const projectsData = [
   {
     title: "Dart Programming",
     pinned: false,
-    category: "Mobile Apps",
+    category: "Mobile Development",
     description:
       "A Dart-based command-line project that demonstrates core programming concepts including variables, control flow, collections, object-oriented programming, asynchronous processing, and exception handling. The project consists of multiple exam modules validated through automated unit testing to ensure correctness and adherence to Dart best practices.",
     images: ["/project/pm2.png"],
@@ -178,7 +178,7 @@ const projectsData = [
   },
   {
     title: "CatatanKeuangan",
-    category: "Mobile Apps",
+    category: "Mobile Development",
     description:
       "An Android application developed in Java for tracking daily income and expenses. Users can add, edit, and delete financial records while viewing a summary of income and expenses.",
     images: ["/project/pm1.png"],
@@ -187,7 +187,7 @@ const projectsData = [
   },
   {
     title: "KonversiSuhu",
-    category: "Desktop Apps",
+    category: "Desktop Development",
     description:
       "A Java-based desktop application that allows users to easily convert temperatures between Celsius, Fahrenheit, and Kelvin. The application provides options for selecting input and output units, buttons to calculate, clear, and save conversion results to a file. Each conversion result is timestamped for documented records.",
     images: ["/project/pd1.png"],
@@ -195,7 +195,7 @@ const projectsData = [
   },
   {
     title: "PemesananHotel",
-    category: "Desktop Apps",
+    category: "Desktop Development",
     description:
       "A Java-based desktop application designed to streamline hotel operations. The application includes a secure login system for admins, allowing them to add new bookings where tariffs are automatically calculated based on room type and length of stay. Staff can also search for existing reservations and cancel bookings when necessary, while managing customer data and generating reports efficiently.",
     images: ["/project/pd2.png"],
@@ -236,11 +236,77 @@ const projectsData = [
     ],
   },
   {
+    title: "E-Commerce App with Asynchronous Communication",
+    category: "DevOps & Microservices",
+    description:
+      "A microservices-based e-commerce application demonstrating asynchronous communication using RabbitMQ. The app consists of two services: order service and shipping service. The order service receives orders via HTTP POST requests and publishes them to a RabbitMQ queue. The shipping service consumes these messages from the queue and processes them asynchronously, printing the order data to the console. The architecture can be deployed using Docker Compose or Kubernetes, and optionally integrated with Istio for service mesh routing. This project emphasizes containerization, inter-service messaging, and microservices deployment best practices.",
+    images: ["/project/dm4.png"],
+    github: "https://github.com/aldamrtz/proyek-ketiga",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "RabbitMQ (AMQP)",
+      "Docker",
+      "Docker Compose",
+      "Kubernetes",
+      "Istio",
+      "Git",
+      "GitHub",
+      "GitHub Container Registry (GHCR)",
+      "Postman",
+      "Visual Studio Code",
+    ],
+  },
+  {
+    title: "Karsa Jobs Deployment with Kubernetes",
+    pinned: false,
+    category: "DevOps & Microservices",
+    description:
+      "A web application for managing job listings, deployed using Kubernetes on a local Minikube cluster. The project consists of a Vue.js frontend, a Go-based API backend, and a MongoDB database. It covers containerizing both frontend and backend services, building and pushing Docker images to GitHub Container Registry, deploying multiple services with Kubernetes manifests, and optionally implementing monitoring with Prometheus and Grafana as well as CI pipelines for automated build and deployment.",
+    images: ["/project/dm3.png"],
+    github: ["https://github.com/aldamrtz/proyek-kedua"],
+    tech: [
+      "Vue.js",
+      "Go",
+      "MongoDB",
+      "Docker",
+      "Kubernetes",
+      "Minikube",
+      "Prometheus",
+      "Grafana",
+      "Git",
+      "GitHub",
+      "GitHub Container Registry (GHCR)",
+      "Visual Studio Code",
+    ],
+  },
+  {
+    title: "Item App Deployment with Docker Compose",
+    pinned: false,
+    category: "DevOps & Microservices",
+    description:
+      "A simple web app to add and view items, deployed using Docker Compose. The project uses Node.js + Express for the app service and MongoDB for the database service. It covers containerizing the app, building and pushing Docker images, and managing multiple services with Docker Compose.",
+    images: ["/project/dm2.png"],
+    github:
+      "https://github.com/aldamrtz/a433-microservices/tree/proyek-pertama",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Docker",
+      "Docker Compose",
+      "Git",
+      "GitHub",
+      "GitHub Container Registry (GHCR)",
+      "Visual Studio Code",
+    ],
+  },
+  {
     title: "CI/CD Pipeline Automation with Jenkins",
-    category: "DevOps",
+    category: "DevOps & Microservices",
     description:
       "A complete CI/CD implementation using Jenkins with scripted pipelines, featuring automated build, test, deliver, and deploy stages for Java Maven applications. The project includes user and role management, Docker-based build agents, Poll SCM for automated triggers, and deployment workflows with manual approval.",
-    images: ["/project/do1.png"],
+    images: ["/project/dm1.png"],
     github: "https://github.com/aldamrtz/simple-java-maven-app",
     tech: [
       "Jenkins",
@@ -248,6 +314,8 @@ const projectsData = [
       "Maven",
       "Docker",
       "NGINX",
+      "Grafana",
+      "Prometheus",
       "Git",
       "GitHub",
       "Visual Studio Code",
@@ -259,10 +327,10 @@ export default function Projects() {
   const tabs = [
     "All",
     "Web Development",
-    "Mobile Apps",
-    "Desktop Apps",
+    "Mobile Development",
+    "Desktop Development",
     "API",
-    "DevOps",
+    "DevOps & Microservices",
   ];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
