@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { GraduationCap, ExternalLink } from "lucide-react";
 import Skills from "./Skills";
 
@@ -43,37 +43,96 @@ const awards = [
 ];
 
 function EducationTimeline({ data }) {
+  const capRef = useRef(null);
+
+  const timelineRef = useRef(null);
+  const firstBulletRef = useRef(null);
+  const lastBulletRef = useRef(null);
+
+  const [lineTop, setLineTop] = useState(0);
+  const [lineHeight, setLineHeight] = useState(0);
+
+  useEffect(() => {
+    if (!timelineRef.current || !capRef.current || !lastBulletRef.current)
+      return;
+
+    const calculateLine = () => {
+      const timelineRect = timelineRef.current.getBoundingClientRect();
+
+      const cap = capRef.current.getBoundingClientRect();
+      const last = lastBulletRef.current.getBoundingClientRect();
+
+      const start = cap.top + cap.height / 2 - timelineRect.top;
+      const end = last.top + last.height / 2 - timelineRect.top;
+
+      setLineTop(start);
+      setLineHeight(end - start);
+    };
+
+    calculateLine();
+
+    const observer = new ResizeObserver(calculateLine);
+    observer.observe(timelineRef.current);
+
+    return () => observer.disconnect();
+  }, [data]);
+
   return (
-    <div className="relative mt-2 lg:ml-10">
+    <div ref={timelineRef} className="relative mt-2 lg:ml-10">
       <h3
         className="text-3xl text-[#0f2e51] mb-5 flex items-center gap-4"
         style={{ fontFamily: "'Anton', sans-serif" }}
       >
-        <span className="bg-[#0f2e51] p-2 rounded-sm border-2 border-[#ffffff] flex items-center justify-center relative z-10">
-          <GraduationCap className="w-6 h-6 text-[#ffffff]" />
+        <span
+          ref={capRef}
+          className="bg-[#0f2e51] p-2 rounded-sm border-2 border-white 
+      flex items-center justify-center z-10"
+        >
+          <GraduationCap className="w-6 h-6 text-white" />
         </span>
-        Education
+        EDUCATION
       </h3>
-      <span className="absolute left-5 top-[40px] h-39 lg:h-40 w-[2px] bg-[#ffffff]"></span>
-      <ul className="relative ml-15">
+
+      <motion.span
+        className="absolute left-5 w-[2px] bg-white"
+        style={{ top: lineTop }}
+        animate={{ height: lineHeight }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      />
+
+      <div className="relative">
         {data.map((edu, i) => (
-          <li key={i} className="relative mb-5">
-            <span className="absolute lg:right-[331px] right-[286px] lg:top-1 w-4 h-4 rounded-full bg-[#0f2e51] border-3 border-[#ffffff]" />
-            <p className="font-bold text-sm sm:text-base text-[#0f2e51]">
-              {edu.school}
-            </p>
-            <p className="font-semibold text-sm text-[#0f2e51] mt-1">
-              {edu.major}
-            </p>
-            <p className="font-medium text-xs text-[#0f2e51] mt-1">
-              {edu.period}
-            </p>
-            <p className="inline-block font-medium text-sm text-[#0f2e51] mt-2 bg-[#ffffb0] px-2 py-1 rounded-md shadow-md transform rotate-1">
-              {edu.grade}
-            </p>
-          </li>
+          <div key={i} className="relative mb-6">
+            <span
+              ref={
+                i === 0
+                  ? firstBulletRef
+                  : i === data.length - 1
+                    ? lastBulletRef
+                    : null
+              }
+              className="edu-bullet absolute left-[21px] top-[6px] 
+        w-4 h-4 rounded-full bg-[#0f2e51] 
+        border-3 border-white -translate-x-1/2"
+            />
+
+            <div className="pl-14">
+              <p className="font-semibold text-sm lg:text-base text-[#0f2e51]">
+                {edu.school}
+              </p>
+              <p className="font-medium text-[11px] lg:text-sm text-[#0f2e51]">
+                {edu.major}
+              </p>
+              <p className="font-medium text-[10px] lg:text-xs text-[#0f2e51] mt-1">
+                {edu.period}
+              </p>
+              <p className="inline-block font-medium text-sm text-[#0f2e51] mt-2 bg-[#ffffb0] px-2 py-1 rounded-md shadow-md rotate-1">
+                {edu.grade}
+              </p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
@@ -91,7 +150,7 @@ function PublicationAward({ publications, awards }) {
           className="text-xl text-[#0f2e51] mb-2"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          Publications
+          PUBLICATIONS
         </h3>
         {publications.map((pub) => (
           <a
@@ -133,7 +192,7 @@ function PublicationAward({ publications, awards }) {
           className="text-xl text-[#0f2e51] mb-2"
           style={{ fontFamily: "'Anton', sans-serif" }}
         >
-          Awards
+          AWARDS
         </h3>
         {awards.map((a) => (
           <a
@@ -285,9 +344,9 @@ export default function AboutSection() {
     w-10 lg:w-13
     hover:w-13 lg:hover:w-15
     flex items-center justify-center
-    tracking-widest
     text-base
     rounded-r-xl
+    text-sm sm:text-base lg:text-lg
     transition-all duration-300 ease-out
     ${
       activeTab === "education"
@@ -303,7 +362,7 @@ export default function AboutSection() {
                       clipPath: "inset(-10px -10px -10px 0)",
                     }}
                   >
-                    Education
+                    EDUCATION
                   </button>
 
                   <button
@@ -313,9 +372,9 @@ export default function AboutSection() {
     w-10 lg:w-13
     hover:w-12 lg:hover:w-15
     flex items-center justify-center
-    tracking-widest
     text-base
     rounded-r-xl
+    text-sm sm:text-base lg:text-lg
     transition-all duration-300 ease-out ${
       activeTab === "others" && "translate-x-1 scale-[1.03]"
         ? "bg-[#ffffb0] text-[#0f2e51] z-20 w-12 lg:w-15"
@@ -330,7 +389,7 @@ export default function AboutSection() {
                       clipPath: "inset(-10px -10px -10px 0)",
                     }}
                   >
-                    Others
+                    OTHERS
                   </button>
                 </div>
               </div>

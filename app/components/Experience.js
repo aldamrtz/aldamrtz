@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ChevronLeft,
@@ -14,29 +14,25 @@ import {
 const tabColors = ["#0f2e51", "#12345a", "#153a63", "#18406c"];
 
 const tabHeader = {
-  Internship: {
-    title: "Internship Experience",
+  "WORK EXPERIENCE": {
+    title: "WORK EXPERIENCE",
     icon: <Briefcase className="w-6 h-6 text-white" />,
   },
-  "Teaching Assistant": {
-    title: "Teaching Assistant Experience",
-    icon: <BookOpen className="w-6 h-6 text-white" />,
-  },
-  Training: {
-    title: "Training Experience",
+  "TRAINING EXPERIENCE": {
+    title: "TRAINING EXPERIENCE",
     icon: <Laptop className="w-6 h-6 text-white" />,
   },
-  Organization: {
-    title: "Organization Experience",
+  "ORGANIZATION EXPERIENCE": {
+    title: "ORGANIZATION EXPERIENCE",
     icon: <Users className="w-6 h-6 text-white" />,
   },
 };
 
 const experienceData = [
-  // Internship
+  // Work Experience
   {
-    type: "Internship",
-    position: "Information Systems Intern",
+    type: "WORK EXPERIENCE",
+    position: "Information System Intern",
     company: "Rectorate of Universitas Jenderal Achmad Yani ",
     year: "Cimahi, Aug 2024 – Sep 2024",
     gallery: [
@@ -44,49 +40,49 @@ const experienceData = [
       "/experience/i1b.jpg",
       "/experience/i1c.jpg",
     ],
-    description:
-      "Developed a web-based application to manage account and subdomain requests at Universitas Jenderal Achmad Yani, including system analysis, UI/UX design, Black Box and User Acceptance Testing (92% student and 88% admin satisfaction), and preparation of technical documentation for implementation.",
+    description: [
+      "Developed a web-based application to manage email account and subdomain request processes for students, lecturers, and administrative staff at Universitas Jenderal Achmad Yani.",
+      "Analyzed system requirements, modeled process flows, designed the database, and created user interface (UI/UX) designs.",
+      "Conducted system testing using Black Box Testing (100% success rate, 21/21 scenarios meeting specifications) and User Acceptance Testing (UAT), achieving satisfaction rates of 92% (students) and 88% (administrators).",
+      "Prepared technical documentation and testing reports as recommendations for system implementation.",
+    ],
   },
   {
-    type: "Internship",
-    position: "Field Work Practice",
-    company: "PT Hitachi Chemical Indonesia",
-    year: "Karawang, Oct 2019 – Dec 2019",
-    certificate: ["/experience/i2a.png", "/experience/i2c.png"],
-    description:
-      "Managed daily production line tasks at PT. Hitachi Chemical Indonesia, including preparing worksheets and Process Control Sheets, summarizing production data for Plant 1 and Plant 2, handling around 150 physical documents, and participating in 5S initiatives to ensure workplace efficiency and organization.",
-  },
-
-  // Teaching Assistant
-  {
-    type: "Teaching Assistant",
-    position: "Teaching Assistant | Computer Education Practicum",
-    company: "Law Study Program at UNJANI",
-    year: "Cimahi, Jul 2025",
+    type: "WORK EXPERIENCE",
+    position: "Teaching Assistant",
+    company: "Universitas Jenderal Achmad Yani",
+    year: "Cimahi, Oct 2022 – Dec 2022 & Jul 2025",
     gallery: [
       "/experience/t2a.png",
       "/experience/t2b.jpg",
       "/experience/t2c.png",
       "/experience/t2d.jpg",
     ],
-    description:
-      "Assisted 40+ students in practical sessions, guiding them on Microsoft Word for thesis preparation, answering questions, preparing materials, coordinating with lecturers, and evaluating student assignments.",
+    certificate: ["/experience/t1a.png"],
+    description: [
+      "Assisted 30+ students in understanding practical module materials and exercises.",
+      "Prepared practical session materials and coordinated with lecturers regarding the implementation of laboratory sessions.",
+      "Evaluated and assessed students’ practical reports.",
+    ],
   },
   {
-    type: "Teaching Assistant",
-    position: "Teaching Assistant | Computer Applications Practicum",
-    company: "Informatics Engineering Study Program at UNJANI",
-    year: "Cimahi, Oct 2022 – Dec 2022",
-    certificate: ["/experience/t1a.png"],
-    description:
-      "Assisted 30+ students in understanding practicum materials and exercises, focusing on Microsoft Word, Excel, and PowerPoint. Provided support by answering questions, facilitating learning during sessions, preparing practicum materials, coordinating with lecturers, and evaluating students’ practicum reports.",
+    type: "WORK EXPERIENCE",
+    position: "Field Work Practice",
+    company: "PT Hitachi Chemical Indonesia",
+    year: "Karawang, Oct 2019 – Dec 2019",
+    certificate: ["/experience/i2a.png", "/experience/i2c.png"],
+    description: [
+      "Performed routine operations on the production line, including preparing approximately 15 daily worksheets, archiving around 10 Quality Assurance (QA)-approved Process Control Sheets (PCS), and inputting and summarizing daily production data for Plant 1 and Plant 2.",
+      "Prepared and managed approximately 150 physical documents, including Process Control Sheets (PCS), daily worksheets, and production tag labels, to support weekend operations.",
+      "Participated in 5S activities to maintain cleanliness, organization, and efficiency in the work area.",
+    ],
   },
 
   // Training
   {
-    type: "Training",
+    type: "TRAINING EXPERIENCE",
     position:
-      "Project Management | Fresh Graduate Academy (Digital Talent Scholarship 2025)",
+      "Project Management Trainee (Fresh Graduate Academy Digital Talent Scholarship 2025)",
     company: "Google x Kementerian Komunikasi dan Digital (Komdigi)",
     year: "Karawang, Oct 2025 – Dec 2025",
     gallery: [
@@ -105,13 +101,16 @@ const experienceData = [
       "/experience/p1e.png",
       "/experience/p1f.png",
     ],
-    description:
-      "Participated in an intensive online Project Management training through the Fresh Graduate Academy (Digital Talent Scholarship 2025), completing a structured four-stage Learning Path from Micro Skills to Final Course with certification. Developed practical project management skills and supporting competencies in AI Essentials, including AI fundamentals, productivity techniques with AI tools, prompt engineering, and ethical AI usage.",
+    description: [
+      "Participated in an intensive training program covering theory, case studies, quizzes, and competency assessments.",
+      "Completed four stages of the Project Management learning path, including Micro Skills, Beginner Project Management, Intermediate Project Management, and Final Project Management Courses and Certification.",
+      "Developed supporting competencies through the AI Essentials modules, including Introduction to AI, Maximizing Productivity with AI Tools, Discovering the Art of Prompting, Using AI Responsibly, and Staying Ahead of the AI Curve.",
+    ],
   },
   {
-    type: "Training",
+    type: "TRAINING EXPERIENCE",
     position:
-      "Full-Stack Developer | Studi Independen Bersertifikat Dicoding x Kampus Merdeka Cycle 5",
+      "Full-Stack Developer Cohort (SIB Dicoding x Kampus Merdeka Cycle 5)",
     company: "Dicoding Indonesia (PT Presentologics)",
     year: "Bandung, Aug 2023 – Dec 2023",
     gallery: [
@@ -121,15 +120,20 @@ const experienceData = [
       "/experience/p2d.png",
     ],
     certificate: ["/experience/p2e.png", "/experience/p2f.png"],
-    description:
-      "Completed intensive online training covering theory, hands-on practice, quizzes, exams, and a capstone project. Gained technical proficiency in Front-End, Back-End, and DevOps through 10+ certification classes, instructor-led sessions, expert mentoring, and consultations. Developed non-technical skills in Growth Mindset, Communication, and Business Presentation, etc. Collaborated on a team project to build a web-based application integrating Front-End, Back-End, and DevOps.",
+    description: [
+      "Participated in 906 hours of intensive learning covering theory, hands-on practice, quizzes, examinations, and a final project.",
+      "Completed 10+ technical certification courses related to Front-End and Back-End development, as well as DevOps practices.",
+      "Participated in Structured learning sessions, including Instructor-Led Training (ILT), Expert Sessions, Weekly Mentoring, and soft skills development sessions.",
+      "Collaborated in a Capstone Project to develop the web-based application Edukasi Fauna Indonesia (EDFA ID).",
+    ],
   },
 
   // Organization
   {
-    type: "Organization",
-    position: "Committee Member | New Student Orientation",
-    company: "Informatics Engineering Study Program at UNJANI",
+    type: "ORGANIZATION EXPERIENCE",
+    position:
+      "Committee Member (Bimbingan Angkatan Pembekalan Kepemimpinan, Manajemen, dan Organisasi)",
+    company: "Universitas Jenderal Achmad Yani",
     year: "Cimahi, Jul 2024",
     gallery: [
       "/experience/o1.jpg",
@@ -138,22 +142,62 @@ const experienceData = [
       "/experience/o4.jpg",
       "/experience/o5.jpg",
     ],
-    description:
-      "Managed participant and staff needs, including meals and health, from preparation to distribution to ensure smooth event operations. Coordinated with team members across divisions to maintain organized and efficient processes, and supervised on-site activities while addressing any arising issues.",
+    description: [
+      "Actively participated in coordination meetings and event planning activities.",
+      "Managed catering and health-related needs for participants and committee members, including planning and distribution.",
+      "Supervised on-site activities and assisted in resolving operational issues.",
+      "Coordinated with cross-division committees to ensure events were conducted smoothly and according to plan.",
+    ],
   },
 ];
 
 export default function Experience() {
-  const bulletPositions = [10, 12, 180, 250];
+  const lastBulletRef = useRef(null);
+  const timelineRef = useRef(null);
 
-  const tabs = ["Internship", "Teaching Assistant", "Training", "Organization"];
-  const [activeTab, setActiveTab] = useState("Internship");
+  const [lineHeight, setLineHeight] = useState(0);
+
+  const tabs = [
+    "WORK EXPERIENCE",
+    "TRAINING EXPERIENCE",
+    "ORGANIZATION EXPERIENCE",
+  ];
+  const [activeTab, setActiveTab] = useState("WORK EXPERIENCE");
 
   const activeIndex = tabs.indexOf(activeTab);
   const activeColor = tabColors[activeIndex];
   const [modalContent, setModalContent] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const filteredData = experienceData.filter((exp) => exp.type === activeTab);
+
+  useEffect(() => {
+    if (!timelineRef.current || !lastBulletRef.current) return;
+
+    const calculateLine = () => {
+      const timelineRect = timelineRef.current.getBoundingClientRect();
+
+      const bullet = lastBulletRef.current.querySelector(".timeline-bullet");
+      if (!bullet) return;
+
+      const bulletRect = bullet.getBoundingClientRect();
+
+      const bulletCenter =
+        bulletRect.top + bulletRect.height / 2 - timelineRect.top;
+      const headerBottom =
+        timelineRef.current.querySelector("h3").getBoundingClientRect().bottom -
+        timelineRect.top;
+
+      setLineHeight(bulletCenter - headerBottom);
+    };
+
+    calculateLine();
+
+    const observer = new ResizeObserver(calculateLine);
+    observer.observe(timelineRef.current);
+
+    return () => observer.disconnect();
+  }, [activeTab]);
 
   const openModal = (type, items) => {
     setModalContent({ type, items });
@@ -164,11 +208,11 @@ export default function Experience() {
 
   const nextSlide = () =>
     setCurrentSlide((prev) =>
-      prev + 1 >= modalContent.items.length ? 0 : prev + 1
+      prev + 1 >= modalContent.items.length ? 0 : prev + 1,
     );
   const prevSlide = () =>
     setCurrentSlide((prev) =>
-      prev - 1 < 0 ? modalContent.items.length - 1 : prev - 1
+      prev - 1 < 0 ? modalContent.items.length - 1 : prev - 1,
     );
 
   return (
@@ -222,6 +266,7 @@ export default function Experience() {
     flex items-center justify-center
     rounded-t-lg
     transition-all duration-300 ease-out
+    text-sm sm:text-base lg:text-lg
     hover:h-16 hover:-mt-3
     ${
       activeTab === tab
@@ -249,7 +294,7 @@ export default function Experience() {
           style={{ backgroundColor: activeColor }}
         >
           <div className="relative mb-[-32]">
-            <div className="relative mt-2 lg:ml-6 mb-8">
+            <div ref={timelineRef} className="relative mt-2 lg:ml-6 mb-8">
               <h3
                 className="text-2xl text-[#ffffff] mb-5 flex items-center gap-4"
                 style={{ fontFamily: "'Anton', sans-serif" }}
@@ -264,42 +309,50 @@ export default function Experience() {
                 {tabHeader[activeTab].title}
               </h3>
 
-              <span
-                className="absolute left-5 w-[2px] bg-[#ffffff]"
-                style={{
-                  top: "44px",
-                  height: activeTab === "Organization" ? "30px" : "55%",
-                }}
+              <motion.span
+                className="absolute left-5 w-[2px] bg-white"
+                style={{ top: 44 }}
+                animate={{ height: lineHeight }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               />
 
               {filteredData.map((exp, index) => (
-                <div key={index} className="relative mb-10 w-full">
-                  <div
-                    className="absolute left-[21px] w-4 h-4 rounded-full border-3 border-[#ffffff] transform -translate-x-1/2"
-                    style={{
-                      top: `${bulletPositions[index]}px`,
-                      backgroundColor: activeColor,
-                    }}
-                  ></div>
+                <div
+                  key={index}
+                  ref={index === filteredData.length - 1 ? lastBulletRef : null}
+                  className="relative mb-10 w-full"
+                >
+                  <span
+                    className="timeline-bullet absolute left-[21px] top-[6px] w-4 h-4 rounded-full border-3 border-white -translate-x-1/2"
+                    style={{ backgroundColor: activeColor }}
+                  />
 
-                  <div className="w-full pl-14 -pr-1 lg:pr-15 relative text-left">
+                  <div className="w-full pl-14 relative text-left">
                     <div className="p-1 text-white">
-                      <h3 className="font-bold text-sm lg:text-base mt-1 text-[#ffffb0]">
+                      <h3 className="font-medium text-sm lg:text-base text-[#ffffb0]">
                         {exp.position}
                       </h3>
                       <div>
-                        <span className="font-semibold text-xs text-[11px] lg:text-sm text-[#a5c882]">
+                        <span className="font-medium text-[11px] lg:text-sm text-[#a5c882]">
                           {exp.company}
                         </span>
                         <span className="font-medium block text-[10px] lg:text-xs mt-1 text-[#b4dbdc]">
                           {exp.year}
                         </span>
                       </div>
-                      <p className="mt-1 text-justify md:text-sm text-xs">
-                        {Array.isArray(exp.description)
-                          ? exp.description.join(" ")
-                          : exp.description}
-                      </p>
+                      {Array.isArray(exp.description) ? (
+                        <ul className="mt-1 list-disc list-outside pl-4 space-y-1 md:text-sm text-xs">
+                          {exp.description.map((item, idx) => (
+                            <li key={idx} className="text-justify">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="mt-1 text-justify md:text-sm text-xs">
+                          {exp.description}
+                        </p>
+                      )}
 
                       <div className="flex gap-3 mt-2 flex-wrap">
                         {exp.gallery?.length > 0 && (
