@@ -223,7 +223,7 @@ export default function Contact() {
             <div className="relative">
               <input
                 type="text"
-                name="name"
+                name="subject"
                 placeholder=" "
                 className="text-white peer w-full border border-[#0f2e51] rounded-lg p-4 
     bg-white/10 focus:outline-none focus:border focus:border-[#0f2e51] 
