@@ -33,7 +33,7 @@ const experienceData = [
   {
     type: "WORK EXPERIENCE",
     position: "Information System Intern",
-    company: "Rectorate of Universitas Jenderal Achmad Yani ",
+    company: "Rectorate Office, Universitas Jenderal Achmad Yani",
     year: "Cimahi, Aug 2024 – Sep 2024",
     gallery: [
       "/experience/i1a.jpg",
@@ -41,16 +41,18 @@ const experienceData = [
       "/experience/i1c.jpg",
     ],
     description: [
-      "Developed a web-based application to manage email account and subdomain request processes for students, lecturers, and administrative staff at Universitas Jenderal Achmad Yani.",
-      "Analyzed system requirements, modeled process flows, designed the database, and created user interface (UI/UX) designs.",
-      "Conducted system testing using Black Box Testing (100% success rate, 21/21 scenarios meeting specifications) and User Acceptance Testing (UAT), achieving satisfaction rates of 92% (students) and 88% (administrators).",
-      "Prepared technical documentation and testing reports as recommendations for system implementation.",
+      "Followed the full SDLC process, including requirements analysis, application flow modeling using UML, relational database design with MySQL, and UI/UX design using Figma.",
+      "Built an end-to-end ticketing system (AccessTrack) using MVC architecture with PHP (CodeIgniter), implementing multi-level approval and Role-Based Access Control (RBAC) for validation workflows.",
+      "Developed automatic account generation and real-time form validation using AJAX, integrated Regex and Google reCAPTCHA v3, and implemented email notifications via SMTP for status tracking.",
+      "Conducted system testing through black-box testing (100% success rate, 21/21 scenarios) and User Acceptance Testing (UAT) with satisfaction rates of 92% (students) and 88% (admin).",
+      "Managed the code repository using Git and prepared technical documentation and testing reports.",
     ],
   },
   {
     type: "WORK EXPERIENCE",
     position: "Teaching Assistant",
-    company: "Universitas Jenderal Achmad Yani",
+    company:
+      "Department of Informatics Engineering, Universitas Jenderal Achmad Yani ",
     year: "Cimahi, Oct 2022 – Dec 2022 & Jul 2025",
     gallery: [
       "/experience/t2a.png",
@@ -60,9 +62,9 @@ const experienceData = [
     ],
     certificate: ["/experience/t1a.png"],
     description: [
-      "Assisted 30+ students in understanding practical module materials and exercises.",
-      "Prepared practical session materials and coordinated with lecturers regarding the implementation of laboratory sessions.",
-      "Evaluated and assessed students’ practical reports.",
+      "Assisted 30+ students in understanding course materials and completing practical exercises.",
+      "Prepared session materials and coordinated with lecturers to support the delivery of practical classes.",
+      "Evaluated and graded students’ practical reports.",
     ],
   },
   {
@@ -102,9 +104,10 @@ const experienceData = [
       "/experience/p1f.png",
     ],
     description: [
-      "Participated in an intensive training program covering theory, case studies, quizzes, and competency assessments.",
-      "Completed four stages of the Project Management learning path, including Micro Skills, Beginner Project Management, Intermediate Project Management, and Final Project Management Courses and Certification.",
-      "Developed supporting competencies through the AI Essentials modules, including Introduction to AI, Maximizing Productivity with AI Tools, Discovering the Art of Prompting, Using AI Responsibly, and Staying Ahead of the AI Curve.",
+      "Analyzed project lifecycles through case studies, focusing on scope management, cost efficiency, and risk mitigation strategies.",
+      "Applied Agile and Scrum methodologies in practice, including sprint planning and retrospectives to manage workflows.",
+      "Prepared capstone project documents, including Project Charter, Risk Assessment, Quality Evaluation, and Stakeholder Report.",
+      "Developed Work Breakdown Structures (WBS) and Gantt Charts for task planning and scheduling, and utilized AI-assisted tools in project planning.",
     ],
   },
   {
@@ -121,10 +124,10 @@ const experienceData = [
     ],
     certificate: ["/experience/p2e.png", "/experience/p2f.png"],
     description: [
-      "Participated in 906 hours of intensive learning covering theory, hands-on practice, quizzes, examinations, and a final project.",
-      "Completed 10+ technical certification courses related to Front-End and Back-End development, as well as DevOps practices.",
-      "Participated in Structured learning sessions, including Instructor-Led Training (ILT), Expert Sessions, Weekly Mentoring, and soft skills development sessions.",
-      "Collaborated in a Capstone Project to develop the web-based application Edukasi Fauna Indonesia (EDFA ID).",
+      "Completed 906 hours of intensive training covering full-stack development, including programming fundamentals, Front-End architecture (React), Back-End development (Node.js), and automated testing.",
+      "Participated in structured learning sessions, including Instructor-Led Training (ILT), expert sessions, weekly mentoring, and soft skills development.",
+      "Learned and applied microservices architecture and DevOps practices, including CI/CD pipeline automation (Jenkins) and containerization using Docker and Kubernetes for application deployment.",
+      "Collaborated on a capstone project to integrate technical knowledge by developing a web-based application, Edukasi Fauna Indonesia (EDFA ID).",
     ],
   },
 
@@ -133,7 +136,8 @@ const experienceData = [
     type: "ORGANIZATION EXPERIENCE",
     position:
       "Committee Member (Bimbingan Angkatan Pembekalan Kepemimpinan, Manajemen, dan Organisasi)",
-    company: "Universitas Jenderal Achmad Yani",
+    company:
+      "Department of Informatics Engineering, Universitas Jenderal Achmad Yani ",
     year: "Cimahi, Jul 2024",
     gallery: [
       "/experience/o1.jpg",
@@ -143,10 +147,9 @@ const experienceData = [
       "/experience/o5.jpg",
     ],
     description: [
-      "Actively participated in coordination meetings and event planning activities.",
-      "Managed catering and health-related needs for participants and committee members, including planning and distribution.",
-      "Supervised on-site activities and assisted in resolving operational issues.",
-      "Coordinated with cross-division committees to ensure events were conducted smoothly and according to plan.",
+      "Collaborated with cross-functional committees from the planning stage through to the full execution of the event.",
+      "Managed logistical needs, including food and health support for all participants and organizing committee members throughout the event duration.",
+      "Monitored on-site activities and resolved operational issues to ensure smooth event execution.",
     ],
   },
 ];

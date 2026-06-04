@@ -3,17 +3,17 @@
 import { motion } from "framer-motion";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiTailwindcss,
   SiBootstrap,
   SiJavascript,
+  SiTypescript,
   SiReact,
   SiNextdotjs,
   SiNodedotjs,
+  SiExpress,
   SiPhp,
   SiCodeigniter,
-  SiFlutter,
-  SiDart,
   SiMysql,
   SiPostman,
   SiGit,
@@ -22,28 +22,31 @@ import {
   SiFigma,
   SiCanva,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa6";
 
 export default function Skills() {
   const techStack = [
     { name: "HTML", icon: SiHtml5 },
-    { name: "CSS", icon: SiCss3 },
-    { name: "Tailwind CSS", icon: SiTailwindcss },
-    { name: "Bootstrap", icon: SiBootstrap },
+    { name: "CSS", icon: SiCss },
     { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+
     { name: "React", icon: SiReact },
     { name: "Next.js", icon: SiNextdotjs },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Bootstrap", icon: SiBootstrap },
+
     { name: "Node.js", icon: SiNodedotjs },
-    { name: "Java", icon: FaJava },
+    { name: "Express.js", icon: SiExpress },
     { name: "PHP", icon: SiPhp },
     { name: "CodeIgniter", icon: SiCodeigniter },
-    { name: "Flutter", icon: SiFlutter },
-    { name: "Dart", icon: SiDart },
+
     { name: "MySQL", icon: SiMysql },
-    { name: "Postman", icon: SiPostman },
+
     { name: "Git", icon: SiGit },
+    { name: "Postman", icon: SiPostman },
     { name: "Docker", icon: SiDocker },
     { name: "Kubernetes", icon: SiKubernetes },
+
     { name: "Figma", icon: SiFigma },
     { name: "Canva", icon: SiCanva },
   ];

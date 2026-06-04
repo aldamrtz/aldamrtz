@@ -269,17 +269,15 @@ export default function AboutSection() {
             </span>
             My name's<span className="text-[#a5c882]"> Alda Amorita Azza</span>,
             a Computer Science graduate who’s endlessly curious about how tech
-            shapes everyday life. I’ve explored building web apps end-to-end,
-            from designing the interface, crafting the backend logic, managing
-            databases, integrating APIs, to making sure everything runs smoothly
-            through testing. Along the way, I also discovered how much I enjoy
-            collaborating with people and growing through teamwork on different
-            projects. It turns out that sharing knowledge can be just as
-            worthwhile as learning it myself. At the moment, I’m embracing every
-            chance to learn, experiment, and sharpen my skills. With a big
-            enthusiasm for continuous learning and adaptability, I aim to grow
-            into a tech professional who’s skilled, creative, and ready to
-            thrive in this ever-evolving digital world.
+            shapes everyday life. I've explored building web apps end-to-end,
+            working across the frontend, backend, and database, while making
+            sure everything works as expected through testing. Along the way, I
+            also discovered how much I enjoy collaborating with people and
+            growing through teamwork on different projects. It turns out that
+            sharing knowledge can be just as worthwhile as learning it myself.
+            These days, I'm always looking for new things to learn, new
+            challenges to take on, and new opportunities to grow as a tech
+            professional.
           </motion.p>
         </div>
 

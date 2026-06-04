@@ -43,6 +43,15 @@ export default function Contact() {
     }
   };
 
+  const formatContactLabel = (username) => {
+    if (!username.startsWith("http")) return username;
+
+    return username
+      .replace(/^https?:\/\//, "")
+      .replace(/^www\./, "")
+      .replace(/\/$/, "");
+  };
+
   const socialLinks = [
     {
       name: "Email",
@@ -52,9 +61,9 @@ export default function Contact() {
     },
     {
       name: "LinkedIn",
-      username: "https://www.linkedin.com/in/alda-amorita-azza/",
+      username: "https://www.linkedin.com/in/aldamrtz",
       icon: Linkedin,
-      link: "https://www.linkedin.com/in/alda-amorita-azza/",
+      link: "https://www.linkedin.com/in/aldamrtz",
     },
     {
       name: "GitHub",
@@ -136,9 +145,7 @@ export default function Contact() {
                   {name}
                 </span>
                 <span className="text-sm" style={{ color: "#a5c882" }}>
-                  {name === "Email"
-                    ? username
-                    : username.split("/").filter(Boolean).pop()}
+                  {formatContactLabel(username)}
                 </span>
               </div>
             </div>
@@ -154,7 +161,7 @@ export default function Contact() {
                   {name}
                 </span>
                 <span className="text-sm" style={{ color: "#a5c882" }}>
-                  {username.split("/").filter(Boolean).pop()}
+                  {formatContactLabel(username)}
                 </span>
               </div>
             </div>

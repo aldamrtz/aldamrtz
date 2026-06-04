@@ -6,7 +6,7 @@ import { Poppins } from "next/font/google";
 export const metadata = {
   title: "Alda's Portfolio",
   icons: {
-    icon: "/logo.png",
+    icon: "/A.png",
   },
 };
 
