@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint",
-    "preview": "opennextjs-cloudflare build && wrangler dev",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy"
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "wrangler deploy"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
