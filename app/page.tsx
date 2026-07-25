@@ -14,6 +14,17 @@ import { ArrowUp } from "lucide-react";
 
 export default function Page() {
   const [showButton, setShowButton] = useState(false);
+  const [activeSection, setActiveSection] = useState("landing");
+  const sectionNavigation = [
+    { id: "landing", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "certifications", label: "Certifications" },
+    { id: "contact", label: "Contact" },
+  ];
+  const heroSupportingTextClass =
+    "text-sm sm:text-base lg:text-lg leading-tight";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,18 +34,35 @@ export default function Page() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      { threshold: [0.2, 0.4, 0.6], rootMargin: "-20% 0px -35%" },
+    );
+
+    sectionNavigation.forEach(({ id }) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const letterVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -45,17 +73,48 @@ export default function Page() {
     <div>
       <Header />
 
+      <nav
+        className="fixed right-2.5 top-1/2 z-50 hidden -translate-y-1/2 flex-col items-center gap-3 md:flex"
+        aria-label="Section navigation"
+      >
+        {sectionNavigation.map((section) => {
+          const isActive = activeSection === section.id;
+
+          return (
+            <button
+              key={section.id}
+              type="button"
+              onClick={() => scrollToSection(section.id)}
+              className="group relative grid h-3 w-3 place-items-center cursor-pointer"
+              aria-label={`Go to ${section.label}`}
+              aria-current={isActive ? "true" : undefined}
+            >
+              <span
+                className={`block rounded-full transition-all duration-300 ${
+                  isActive
+                    ? "h-3 w-3 bg-white shadow-[0_0_0_2px_rgba(255,255,255,0.12)]"
+                    : "h-2 w-2 bg-white/25 group-hover:bg-[#b4dbdc]"
+                }`}
+              />
+              <span className="pointer-events-none absolute right-7 whitespace-nowrap rounded-md bg-[#0b0d10] px-2 py-1 text-xs text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+                {section.label}
+              </span>
+            </button>
+          );
+        })}
+      </nav>
+
       <section
         id="landing"
         className="h-screen relative flex justify-center items-center px-8 lg:px-20"
         style={{
-          backgroundColor: "#0f2e51",
+          backgroundColor: "#0b0d10",
         }}
       >
         <div className="flex flex-col items-center text-left z-10">
           <div className="flex items-center gap-4">
             <div
-              className="flex flex-col mt-6 sm:mt-12 lg:mt-16 mr-50 sm:mr-10 lg:mr-65 text-sm sm:text-base lg:text-lg leading-tight"
+              className={`flex flex-col mt-6 sm:mt-12 lg:mt-16 mr-50 sm:mr-10 lg:mr-65 ${heroSupportingTextClass}`}
               style={{ WebkitTextStroke: "0.5px ", color: "#ffffff" }}
             >
               <span>Hey! You’ve just</span>
@@ -68,8 +127,8 @@ export default function Page() {
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[90%] lg:-translate-y-[85%] text-7xl lg:text-[6rem] leading-none z-100"
               style={{
                 fontFamily: "'Brittany Signature', cursive",
-                color: "#a5c882",
-                WebkitTextStroke: "2px #6f8757",
+                color: "#b4dbdc",
+                WebkitTextStroke: "2px #72999b",
               }}
             >
               <span>alda’s</span>
@@ -110,10 +169,10 @@ export default function Page() {
           </h2>
           <div className="w-full flex justify-start mt-2 lg:mt-2">
             <h3
-              className="text-sm sm:text-base lg:text-lg leading-tight z-10"
+              className={`${heroSupportingTextClass} z-10`}
               style={{
                 WebkitTextStroke: "0.5px ",
-                color: "#a5c882",
+                color: "#b4dbdc",
               }}
             >
               <Typewriter
@@ -157,20 +216,6 @@ export default function Page() {
       </main>
 
       <Footer />
-      {showButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-[#a5c882] hover:bg-[#6f8757] 
-    hover:text-white text-[#0f2e51] rounded-full p-4 shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center"
-          style={{
-            width: "45px",
-            height: "45px",
-          }}
-          aria-label="Scroll to top"
-        >
-          <ArrowUp strokeWidth={4.5} className="w-6 h-6 " />
-        </button>
-      )}
     </div>
   );
 }

@@ -334,7 +334,6 @@ export default function Projects() {
   ];
   const [activeTab, setActiveTab] = useState("All");
   const [selected, setSelected] = useState(null);
-  const [currentImg, setCurrentImg] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = (
@@ -348,11 +347,11 @@ export default function Projects() {
     : filteredProjects.slice(0, 6);
 
   return (
-    <section id="projects" className=" py-10 px-15 bg-[#f1f5f9]">
-      <div className="relative bg-[#f1f5f9] py-10 overflow-hidden">
+    <section id="projects" className="py-25 px-15 bg-[#0b0d10]">
+      <div className="relative bg-[#0b0d10] py-5 overflow-hidden">
         <div className="absolute inset-0 flex items-center mb-10 justify-center">
           <span
-            className="uppercase text-[#ffffff] text-6xl sm:text-7xl lg:text-8xl tracking-widest"
+            className="uppercase text-white/10 text-6xl sm:text-7xl lg:text-8xl tracking-widest"
             style={{
               fontFamily: "'Anton', sans-serif",
             }}
@@ -363,17 +362,17 @@ export default function Projects() {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 text-center">
           <h2
-            className="uppercase text-4xl lg:text-5xl text-[#0f2e51] mx-auto"
+            className="uppercase text-4xl lg:text-5xl text-white mx-auto"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Projects
           </h2>
-          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#56718c] flex justify-center items-baseline gap-1">
+          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#b4dbdc] flex justify-center items-baseline gap-1">
             <span>– What </span>
             <span
               style={{
                 fontFamily: "'Brittany Signature', cursive",
-                color: "#0f2e51",
+                color: "#ffffff",
               }}
               className="text-base sm:text-xl font-semibold"
             >
@@ -397,8 +396,8 @@ export default function Projects() {
             <span
               className={`${
                 activeTab === tab
-                  ? "text-[#0f2e51]"
-                  : "text-[#56718c] hover:text-[#0f2e51]"
+                  ? "text-[#b4dbdc]"
+                  : "text-white hover:text-[#b4dbdc]"
               }`}
             >
               {tab}
@@ -406,7 +405,7 @@ export default function Projects() {
             {activeTab === tab && (
               <motion.div
                 layoutId="underline"
-                className="absolute left-0 bottom-0 w-full h-0.5 bg-[#0f2e51]"
+                className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b4dbdc]"
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
             )}
@@ -425,26 +424,26 @@ export default function Projects() {
             viewport={{ once: true }}
             onClick={() => {
               setSelected(project);
-              setCurrentImg(0);
             }}
-            className="cursor-pointer bg-[#0f2e51] border-2 rounded-xl shadow-md 
-             border-[#0f2e51] hover:shadow-xl hover:border-[#b4dbdc] 
+            className="cursor-pointer bg-[#0b0d10] border-2 rounded-xl shadow-md 
+             border-white/10 hover:shadow-xl hover:border-[#b4dbdc] 
              transition-all duration-300 overflow-hidden group"
           >
             <div className="relative">
               <img
                 src={project.images[0]}
+                alt={`Preview of ${project.title}`}
                 className="w-full h-50 object-cover rounded-t-xl transition-transform duration-500"
               />
               {project.pinned && (
-                <div className="absolute top-2 left-2 bg-[#0f2e51] p-2 rounded-full shadow-md">
+                <div className="absolute top-2 left-2 bg-[#0b0d10] p-2 rounded-full shadow-md">
                   <Pin className="w-3.5 h-3.5 text-white" />
                 </div>
               )}
 
               <span
                 className="absolute top-2 right-2 text-white text-xs px-3 py-1 rounded-full shadow-md"
-                style={{ backgroundColor: "#0f2e51" }}
+                style={{ backgroundColor: "#0b0d10" }}
               >
                 {project.category}
               </span>
@@ -466,7 +465,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <Github className="w-5 h-5 text-[#b4dbdc] hover:text-[#ffffff] transition" />
+                    <Github className="w-5 h-5 text-[#b4dbdc] hover:text-white transition" />
                   </a>
                 )}
               </div>
@@ -479,20 +478,13 @@ export default function Projects() {
                 {project.tech.slice(0, 3).map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs font-medium px-2 py-1 rounded-full"
-                    style={{
-                      backgroundColor: "#a5c882",
-                      color: "#0f2e51",
-                    }}
+                    className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 3 && (
-                  <span
-                    className="text-xs font-medium"
-                    style={{ color: "#ffffb0" }}
-                  >
+                  <span className="text-xs font-medium text-[#b4dbdc]">
                     +{project.tech.length - 3} more
                   </span>
                 )}
@@ -506,10 +498,10 @@ export default function Projects() {
         <div className="flex justify-center">
           <button
             onClick={() => setShowAll(true)}
-            className="group text-sm sm:text-base lg:text-lg font-medium relative pb-1 cursor-pointer transition-colors duration-300 text-[#56718c] hover:text-[#0f2e51]"
+            className="group text-sm sm:text-base lg:text-lg font-medium relative pb-1 cursor-pointer transition-colors duration-300 text-[#b4dbdc] hover:text-white"
           >
             Load more
-            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#56718c] transition-colors duration-300 group-hover:bg-[#0f2e51]" />
+            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b4dbdc] transition-colors duration-300 group-hover:bg-white" />
           </button>
         </div>
       )}
@@ -517,14 +509,14 @@ export default function Projects() {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4"
+            className="fixed inset-0 bg-white/70 backdrop-blur-sm flex items-center justify-center z-[999] px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="bg-[#0f2e51] rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
+              className="project-modal-scroll bg-[#0b0d10] rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -535,31 +527,17 @@ export default function Projects() {
                 onClick={() => setSelected(null)}
                 className="absolute top-6 right-4 z-50 p-2 flex items-center justify-center transition duration-200 ease-in-out cursor-pointer"
                 style={{
-                  color: "#0f2e51",
+                  color: "#ffffff",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = "#b4dbdc";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "#0f2e51";
+                  e.currentTarget.style.color = "#ffffff";
                 }}
               >
                 <X className="w-5 h-5" />
               </button>
-
-              <div className="px-5 py-4 border-b border-gray-200">
-                <div className="flex items-center gap-2 mb-1">
-                  <h3
-                    className="text-lg font-semibold"
-                    style={{ color: "#ffffff" }}
-                  >
-                    {selected.title}
-                  </h3>
-                </div>
-                <p className="text-sm italic" style={{ color: "#b4dbdc" }}>
-                  {selected.category}
-                </p>
-              </div>
 
               <div className="relative w-full max-h-[60vh] aspect-video bg-gray-100 overflow-hidden">
                 <img
@@ -569,35 +547,64 @@ export default function Projects() {
                 />
               </div>
 
-              <div className="p-6 space-y-4 px-5 py-4">
+              <div className="p-6 space-y-5 px-5 py-5">
                 <div>
-                  <h4
-                    className="text-lg font-semibold mb-1"
+                  <h3
+                    className="text-xl font-semibold mb-2"
                     style={{ color: "#ffffff" }}
                   >
-                    Project Overview
-                  </h4>
+                    {selected.title}
+                  </h3>
                   <p className="leading-relaxed" style={{ color: "#ffffff" }}>
                     {selected.description}
                   </p>
-                  <div className="flex gap-2 mt-2 flex-wrap">
+                </div>
+
+                <div>
+                  <p
+                    className="text-lg font-semibold mb-2"
+                    style={{ color: "#ffffff" }}
+                  >
+                    Tech Used:
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {selected.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {(selected.github || selected.liveDemo) && (
+                  <div
+                    className={`grid gap-2 border-t border-white/10 pt-4 ${
+                      selected.github && selected.liveDemo
+                        ? "grid-cols-2"
+                        : "grid-cols-1"
+                    }`}
+                  >
                     {selected.github && (
                       <a
                         href={selected.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
+                        className="flex w-full items-center justify-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
                           backgroundColor: "#b4dbdc",
-                          color: "#0f2e51",
+                          color: "#0b0d10",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#ffffff";
-                          e.currentTarget.style.color = "#0f2e51";
+                          e.currentTarget.style.backgroundColor = "#72999b";
+                          e.currentTarget.style.color = "#ffffff";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = "#b4dbdc";
-                          e.currentTarget.style.color = "#0f2e51";
+                          e.currentTarget.style.color = "#0b0d10";
                         }}
                       >
                         <Github className="w-4 h-4" />
@@ -610,18 +617,20 @@ export default function Projects() {
                         href={selected.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
+                        className="flex w-full items-center justify-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
-                          backgroundColor: "#ffffb0",
-                          color: "#0f2e51",
+                          backgroundColor: "#0b0d10",
+                          color: "#b4dbdc",
+                          border: "1px solid #b4dbdc",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#ffffff";
-                          e.currentTarget.style.color = "#0f2e51";
+                          e.currentTarget.style.backgroundColor = "white";
+                          e.currentTarget.style.color = "#0b0d10";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#ffffb0";
-                          e.currentTarget.style.color = "#0f2e51";
+                          e.currentTarget.style.backgroundColor = "#0b0d10";
+                          e.currentTarget.style.color = "#b4dbdc";
+                          e.currentTarget.style.border = "1px solid #b4dbdc";
                         }}
                       >
                         <ExternalLink className="w-4 h-4" />
@@ -629,31 +638,7 @@ export default function Projects() {
                       </a>
                     )}
                   </div>
-                </div>
-
-                <div>
-                  <p
-                    className="text-lg font-semibold mb-2"
-                    style={{ color: "#ffffff" }}
-                  >
-                    Tech Used:
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {selected.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-xs font-medium px-2 py-1 rounded-full"
-                        style={{
-                          backgroundColor: "#a5c882",
-                          color: "#0f2e51",
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                )}
               </div>
             </motion.div>
           </motion.div>

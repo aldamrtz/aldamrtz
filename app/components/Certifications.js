@@ -304,12 +304,12 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="mx-auto py-10 px-3 lg:px-15 bg-[#0f2e51]"
+      className="mx-auto py-25 px-3 lg:px-15 bg-[#131518]"
     >
-      <div className="relative bg-[#0f2e51] py-10 overflow-hidden">
+      <div className="relative bg-[#131518] py-5 overflow-hidden">
         <div className="absolute inset-0 flex items-center mb-10 justify-end">
           <span
-            className="uppercase text-[#3b5a7c] text-6xl sm:text-7xl lg:text-8xl tracking-widest"
+            className="uppercase text-white/10 text-6xl sm:text-7xl lg:text-8xl tracking-widest"
             style={{
               fontFamily: "'Anton', sans-serif",
             }}
@@ -348,8 +348,8 @@ export default function Certifications() {
             onClick={() => setActiveTab(tab)}
             className={`px-4 py-2 font-medium transition cursor-pointer ${
               activeTab === tab
-                ? "bg-[#b4dbdc] text-[#0f2e51] shadow-lg"
-                : "bg-white text-[#0f2e51] hover:bg-[#b4dbdc] hover:shadow-lg"
+                ? "bg-[#b4dbdc] text-[#0b0d10] shadow-lg"
+                : "bg-white text-[#0b0d10] hover:bg-[#b4dbdc] hover:shadow-lg"
             }`}
           >
             {tab}
@@ -359,11 +359,11 @@ export default function Certifications() {
 
       <Swiper
         modules={[Autoplay, Grid]}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={3}
         grid={{ rows: 2, fill: "row" }}
         spaceBetween={35}
-        speed={1000}
+        speed={1200}
         className="pb-0 px-6 overflow-visible relative z-10"
         breakpoints={{
           0: {

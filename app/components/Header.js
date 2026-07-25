@@ -4,30 +4,29 @@ import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navItems = [
+  "About",
+  "Experience",
+  "Projects",
+  "Certifications",
+  "Contact",
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navItems = [
-    "About",
-    "Experience",
-    "Projects",
-    "Certifications",
-    "Contact",
-  ];
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
+      setScrollProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
       setScrolled(scrollTop > 50);
 
       const sections = navItems.map((id) =>
-        document.getElementById(id.toLowerCase())
+        document.getElementById(id.toLowerCase()),
       );
       sections.forEach((sec, idx) => {
         if (sec) {
@@ -68,10 +67,8 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-colors duration-500 ${
-        menuOpen
-          ? "bg-[#b4dbdc]"
-          : scrolled
-          ? "bg-[#ffffff] backdrop-blur-md shadow-md"
+        menuOpen || scrolled
+          ? "bg-[#0b0d10]/85 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -80,13 +77,9 @@ export default function Header() {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <nav className="max-w-7xl mx-auto px-6 py-6 md:py-8 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 py-4 md:py-5 flex items-center justify-between">
         <div className="hidden md:flex flex-1 justify-center">
-          <ul
-            className={`flex space-x-4 text-lg font-medium ${
-              scrolled ? "text-[#0f2e51]" : "text-[#ffffff]"
-            }`}
-          >
+          <ul className="flex space-x-4 text-lg font-medium text-white">
             {navItems.map((item) => (
               <li key={item}>
                 <a
@@ -96,8 +89,8 @@ export default function Header() {
               transition-all duration-200
               ${
                 activeSection === item
-                  ? "bg-[#0f2e51] text-[#ffffff]"
-                  : "hover:bg-white/10 hover:text-[#b4dbdc]"
+                  ? "text-[#b4dbdc]"
+                  : "hover:text-[#b4dbdc]"
               }
             `}
                 >
@@ -110,9 +103,7 @@ export default function Header() {
 
         <div className="md:hidden ml-auto">
           <button
-            className={`focus:outline-none ${
-              scrolled ? "text-[#0f2e51]" : "text-[#ffffff]"
-            }`}
+            className="focus:outline-none text-white"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >
@@ -132,13 +123,13 @@ export default function Header() {
               />
 
               <motion.div
-                className="fixed top-0 right-0 h-screen w-70 bg-[#ffffff] md:hidden z-50 shadow-md"
+                className="fixed top-0 right-0 h-screen w-70 bg-[#0b0d10]/85 md:hidden z-50 shadow-md"
                 initial={{ x: "100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "100%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <ul className="flex flex-col items-start py-10 pl-10 space-y-6 text-lg font-medium text-[#0f2e51]">
+                <ul className="flex flex-col items-start py-10 pl-10 space-y-6 text-lg font-medium text-white">
                   {navItems.map((item) => (
                     <li key={item} className="w-full">
                       <a
@@ -146,8 +137,8 @@ export default function Header() {
                         className={`w-full px-4 py-2 rounded-md
               transition-all duration-200 ${
                 activeSection === item
-                  ? "bg-[#0f2e51] text-[#ffffff]"
-                  : "hover:bg-white/10 hover:text-[#b4dbdc]"
+                  ? "text-[#b4dbdc]"
+                  : "hover:text-[#b4dbdc]"
               }`}
                         onClick={() => setMenuOpen(false)}
                       >
