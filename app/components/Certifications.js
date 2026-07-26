@@ -304,9 +304,9 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="mx-auto py-25 px-3 lg:px-15 bg-[#131518]"
+      className="mx-auto py-25 px-3 lg:px-15 bg-[#232527]"
     >
-      <div className="relative bg-[#131518] py-5 overflow-hidden">
+      <div className="relative bg-[#232527] py-5 overflow-hidden">
         <div className="absolute inset-0 flex items-center mb-10 justify-end">
           <span
             className="uppercase text-white/10 text-6xl sm:text-7xl lg:text-8xl tracking-widest"

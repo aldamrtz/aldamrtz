@@ -191,11 +191,11 @@ function EducationBulletDetails() {
       {isOrganizationOpen &&
         createPortal(
           <div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-white/70 px-4 py-6 backdrop-blur-sm"
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 px-4 py-6"
             onClick={() => setIsOrganizationOpen(false)}
           >
             <div
-              className="relative w-full max-w-md overflow-hidden rounded-xl bg-[#0b0d10] shadow-2xl shadow-black/30"
+              className="relative w-full max-w-md overflow-hidden rounded-xl bg-[#232527] shadow-2xl shadow-black/30"
               onClick={(event) => event.stopPropagation()}
             >
               <button

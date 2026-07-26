@@ -425,7 +425,7 @@ export default function Projects() {
             onClick={() => {
               setSelected(project);
             }}
-            className="cursor-pointer bg-[#0b0d10] border-2 rounded-xl shadow-md 
+            className="cursor-pointer bg-white/10 rounded-xl shadow-md 
              border-white/10 hover:shadow-xl hover:border-[#b4dbdc] 
              transition-all duration-300 overflow-hidden group"
           >
@@ -436,14 +436,14 @@ export default function Projects() {
                 className="w-full h-50 object-cover rounded-t-xl transition-transform duration-500"
               />
               {project.pinned && (
-                <div className="absolute top-2 left-2 bg-[#0b0d10] p-2 rounded-full shadow-md">
+                <div className="absolute top-2 left-2 bg-[#232527] p-2 rounded-full shadow-md">
                   <Pin className="w-3.5 h-3.5 text-white" />
                 </div>
               )}
 
               <span
                 className="absolute top-2 right-2 text-white text-xs px-3 py-1 rounded-full shadow-md"
-                style={{ backgroundColor: "#0b0d10" }}
+                style={{ backgroundColor: "#232527" }}
               >
                 {project.category}
               </span>
@@ -478,13 +478,13 @@ export default function Projects() {
                 {project.tech.slice(0, 3).map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white"
+                    className="text-xs font-medium px-2 py-1 rounded-full bg-[#b4dbdc] text-[#0b0d10]"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 3 && (
-                  <span className="text-xs font-medium text-[#b4dbdc]">
+                  <span className="text-xs font-medium text-white/50">
                     +{project.tech.length - 3} more
                   </span>
                 )}
@@ -509,14 +509,14 @@ export default function Projects() {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 bg-white/70 backdrop-blur-sm flex items-center justify-center z-[999] px-4"
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-[999] px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
             <motion.div
-              className="project-modal-scroll bg-[#0b0d10] rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
+              className="project-modal-scroll bg-[#232527] rounded-xl shadow-2xl w-full max-w-2xl sm:max-w-3xl max-h-[90vh] overflow-y-auto relative"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -572,7 +572,7 @@ export default function Projects() {
                     {selected.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="text-xs font-medium px-2 py-1 rounded-full bg-white/10 text-white"
+                        className="text-xs font-medium px-2 py-1 rounded-full bg-[#b4dbdc] text-[#0b0d10]"
                       >
                         {tech}
                       </span>
@@ -595,15 +595,15 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="flex w-full items-center justify-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
-                          backgroundColor: "#b4dbdc",
+                          backgroundColor: "white",
                           color: "#0b0d10",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#72999b";
-                          e.currentTarget.style.color = "#ffffff";
+                          e.currentTarget.style.backgroundColor = "#b4dbdc";
+                          e.currentTarget.style.color = "#0b0d10";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#b4dbdc";
+                          e.currentTarget.style.backgroundColor = "white";
                           e.currentTarget.style.color = "#0b0d10";
                         }}
                       >
@@ -619,18 +619,19 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="flex w-full items-center justify-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition"
                         style={{
-                          backgroundColor: "#0b0d10",
-                          color: "#b4dbdc",
-                          border: "1px solid #b4dbdc",
+                          backgroundColor: "#232527",
+                          color: "white",
+                          border: "1px solid white",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "white";
-                          e.currentTarget.style.color = "#0b0d10";
+                          e.currentTarget.style.backgroundColor = "#232527";
+                          e.currentTarget.style.color = "#b4dbdc";
+                          e.currentTarget.style.border = "1px solid#b4dbdc";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#0b0d10";
-                          e.currentTarget.style.color = "#b4dbdc";
-                          e.currentTarget.style.border = "1px solid #b4dbdc";
+                          e.currentTarget.style.backgroundColor = "#232527";
+                          e.currentTarget.style.color = "white";
+                          e.currentTarget.style.border = "1px solid white";
                         }}
                       >
                         <ExternalLink className="w-4 h-4" />

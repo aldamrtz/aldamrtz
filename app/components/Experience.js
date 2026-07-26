@@ -157,11 +157,11 @@ export default function Experience() {
     );
 
   return (
-    <section className="mx-auto py-25 px-3 lg:px-30 bg-[#131518]">
-      <div className="relative bg-[#131518] py-5 overflow-hidden">
+    <section className="mx-auto py-25 px-3 lg:px-30 bg-white">
+      <div className="relative bg-white py-5 overflow-hidden">
         <div className="absolute inset-0 flex items-center mb-10">
           <span
-            className="uppercase text-white/10 text-6xl sm:text-7xl lg:text-8xl tracking-widest"
+            className="uppercase text-[#0b0d10]/10 text-6xl sm:text-7xl lg:text-8xl tracking-widest"
             style={{
               fontFamily: "'Anton', sans-serif",
             }}
@@ -172,17 +172,17 @@ export default function Experience() {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6">
           <h2
-            className="uppercase text-4xl lg:text-5xl text-white"
+            className="uppercase text-4xl lg:text-5xl text-[#0b0d10]"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             Experience
           </h2>
-          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#b4dbdc] flex items-baseline gap-1">
+          <p className="mt-2 text-xs sm:text-base tracking-wide text-[#232527] flex items-baseline gap-1">
             <span>– Learning along the</span>
             <span
               style={{
                 fontFamily: "'Brittany Signature', cursive",
-                color: "white",
+                color: "#0b0d10",
               }}
               className="text-base sm:text-xl font-semibold"
             >
@@ -211,14 +211,14 @@ export default function Experience() {
     hover:h-16 hover:-mt-3
     ${
       activeTab === tab
-        ? "z-20 h-16 -mt-3 text-white shadow-[8px_0_9px_-7px_rgba(0,0,0,0.9)]"
-        : "z-10 text-white/10"
+        ? "z-20 h-16 -mt-3 text-[#b4dbdc] shadow-[8px_0_9px_-7px_rgba(0,0,0,0.9)]"
+        : "z-10 text-white"
     }
   `}
               style={{
                 fontFamily: "'Anton', sans-serif",
                 backgroundColor:
-                  tab === "TRAINING EXPERIENCE" ? "#0D0F12" : "#0b0d10",
+                  tab === "TRAINING EXPERIENCE" ? "#232527" : "#0b0d10",
               }}
             >
               {tab}
@@ -230,7 +230,7 @@ export default function Experience() {
           className="rounded-b-xl px-4 py-6 sm:px-8 lg:px-18"
           style={{
             backgroundColor:
-              activeTab === "TRAINING EXPERIENCE" ? "#0D0F12" : "#0b0d10",
+              activeTab === "TRAINING EXPERIENCE" ? "#232527" : "#0b0d10",
           }}
         >
           <div className="relative mb-[-32]">
@@ -314,7 +314,7 @@ export default function Experience() {
                         {exp.gallery?.length > 0 && (
                           <button
                             onClick={() => openModal("gallery", exp.gallery)}
-                            className="cursor-pointer rounded bg-[#b4dbdc] px-3 py-1 text-sm font-medium text-[#0b0d10] transition hover:text-white hover:bg-[#72999b]"
+                            className="cursor-pointer rounded bg-white px-3 py-1 text-sm font-medium text-[#0b0d10] transition hover:text-[#0b0d10] hover:bg-[#b4dbdc]"
                           >
                             View Gallery
                           </button>
@@ -344,7 +344,7 @@ export default function Experience() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-white/70 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 px-4 py-6"
           onClick={closeModal}
         >
           <motion.div
