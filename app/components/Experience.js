@@ -92,10 +92,10 @@ const experienceData = [
     ],
     certificate: ["/experience/p2e.png", "/experience/p2f.png"],
     description: [
-      "Completed 906 hours of intensive training covering full-stack development, including programming fundamentals, Front-End architecture (React), Back-End development (Node.js), and automated testing.",
-      "Participated in structured learning sessions, including Instructor-Led Training (ILT), expert sessions, weekly mentoring, and soft skills development.",
-      "Learned and applied microservices architecture and DevOps practices, including CI/CD pipeline automation (Jenkins) and containerization using Docker and Kubernetes for application deployment.",
-      "Collaborated on a capstone project to integrate technical knowledge by developing a web-based application, Edukasi Fauna Indonesia (EDFA ID).",
+      "Completed 906 hours of intensive Full-Stack Development training, covering Front-End development (React.js), Back-End development (Node.js), and Cloud Computing fundamentals (AWS).",
+      "Designed and implemented RESTful APIs and relational database schemas using Node.js, Express.js, Sequelize ORM, and MySQL, including API testing with Postman.",
+      "Applied Microservices architecture concepts and DevOps practices, including CI/CD pipeline automation with Jenkins, application containerization using Docker, and Kubernetes orchestration fundamentals.",
+      "Collaborated on the EDFA ID capstone project, contributing to RESTful API development, JWT-based authentication, and an Admin CMS dashboard supporting CRUD operations.",
     ],
   },
 ];
