@@ -17,8 +17,6 @@ import {
   SiMysql,
   SiPostman,
   SiGit,
-  SiDocker,
-  SiKubernetes,
   SiFigma,
   SiCanva,
 } from "react-icons/si";
@@ -40,8 +38,6 @@ export default function Skills() {
     { name: "MySQL", icon: SiMysql, color: "#4479a1" },
     { name: "Git", icon: SiGit, color: "#f05032" },
     { name: "Postman", icon: SiPostman, color: "#ff6c37" },
-    { name: "Docker", icon: SiDocker, color: "#2496ed" },
-    { name: "Kubernetes", icon: SiKubernetes, color: "#326ce5" },
     { name: "Figma", icon: SiFigma, color: "#f24e1e" },
     { name: "Canva", icon: SiCanva, color: "#00c4cc" },
   ];
@@ -49,7 +45,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="max-w-6xl mx-auto px-6 lg:px-30 mt-10 mb-15 lg:mt-0 bg-[#0b0d10]"
+      className="max-w-5xl mx-auto px-6 lg:px-30 mt-10 mb-15 lg:mt-0 bg-[#0b0d10]"
     >
       <h2
         className="mb-1 text-center text-3xl text-[#ffffff] lg:text-4xl"

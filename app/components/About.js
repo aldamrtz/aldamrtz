@@ -98,8 +98,8 @@ function EducationBulletDetails() {
 
   return (
     <div className="flex h-full flex-col text-left text-[#0b0d10]">
-      <div className="mt-3 sm:mt-4 flex items-start gap-2 sm:gap-3">
-        <div className="grid h-12 w-12 sm:h-16 sm:w-16 shrink-0 place-items-center rounded-lg bg-[#0b0d10]/10 p-1.5">
+      <div className="mt-2.5 sm:mt-3 flex items-start gap-2">
+        <div className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-md bg-[#0b0d10]/10 p-1.5">
           <img
             src={universityEducation.logo}
             alt="Universitas Jenderal Achmad Yani"
@@ -107,27 +107,27 @@ function EducationBulletDetails() {
           />
         </div>
         <div className="min-w-0">
-          <h3 className="text-[11px] sm:text-[13px] lg:text-[14px] font-bold leading-tight text-[#0b0d10]">
+          <h3 className="text-[10px] sm:text-[11px] lg:text-[12px] font-bold leading-tight text-[#0b0d10]">
             {universityEducation.school}
           </h3>
-          <p className="mt-1 text-[9px] sm:text-[11px] lg:text-[12px] leading-tight text-[#0b0d10]">
+          <p className="mt-0.5 text-[8px] sm:text-[9px] lg:text-[10px] leading-tight text-[#0b0d10]">
             {universityEducation.major}
           </p>
-          <div className="mt-2 flex flex-wrap gap-1 text-[8px] sm:text-[9px] lg:text-[10px] font-semibold text-white">
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#0b0d10] px-1.5 py-0.5 sm:px-2 sm:py-1">
+          <div className="mt-1.5 flex flex-wrap gap-1 text-[7px] sm:text-[8px] lg:text-[9px] font-semibold text-white">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#0b0d10] px-1.5 py-0.5">
               {universityEducation.period}
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#0b0d10] px-1.5 py-0.5 sm:px-2 sm:py-1">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#0b0d10] px-1.5 py-0.5">
               GPA 3.59/4.00
             </span>
           </div>
         </div>
       </div>
-      <div className="my-2.5 sm:my-3.5 border-t border-[#0b0d10]/10" />
-      <ul className="space-y-1.5 sm:space-y-2 text-[10px] sm:text-[12px] lg:text-[13px] leading-[1.45] lg:leading-[1.55] text-[#0b0d10]">
-        <li className="flex items-start gap-2">
-          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
-            <BookOpen className="h-3.5 w-3.5 text-[#0b0d10]" />
+      <div className="my-2 sm:my-2.5 border-t border-[#0b0d10]/10" />
+      <ul className="space-y-1.5 text-[9px] sm:text-[10px] lg:text-[11px] leading-[1.4] text-[#0b0d10]">
+        <li className="flex items-start gap-1.5">
+          <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
+            <BookOpen className="h-3 w-3 text-[#0b0d10]" />
           </span>
           <div>
             <span className="font-bold text-[#0b0d10]">Publications: </span>
@@ -144,9 +144,9 @@ function EducationBulletDetails() {
             </a>
           </div>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
-            <Award className="h-3.5 w-3.5 text-[#0b0d10]" />
+        <li className="flex items-start gap-1.5">
+          <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
+            <Award className="h-3 w-3 text-[#0b0d10]" />
           </span>
           <div>
             <span className="font-bold text-[#0b0d10]">Awards: </span>
@@ -164,9 +164,9 @@ function EducationBulletDetails() {
             </a>
           </div>
         </li>
-        <li className="flex items-start gap-2">
-          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
-            <UsersRound className="h-3.5 w-3.5 text-[#0b0d10]" />
+        <li className="flex items-start gap-1.5">
+          <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#b4dbdc]">
+            <UsersRound className="h-3 w-3 text-[#0b0d10]" />
           </span>
           <div>
             <span className="font-bold text-[#0b0d10]">Organization: </span>
@@ -265,7 +265,7 @@ function StackedCards() {
   const [activeTab, setActiveTab] = useState("photo");
 
   return (
-    <div className="relative w-60 sm:w-64 lg:w-72 h-[410px] my-2 pt-4 overflow-visible">
+    <div className="relative w-52 sm:w-56 lg:w-60 h-[330px] my-2 pt-4 overflow-visible">
       {/* PHOTO CARD */}
       <motion.div
         onClick={() => setActiveTab("photo")}
@@ -276,14 +276,14 @@ function StackedCards() {
         }
         transition={{ type: "spring", stiffness: 220, damping: 20 }}
         whileHover={activeTab !== "photo" ? { rotate: -9, scale: 0.98 } : {}}
-        className={`absolute inset-0 bg-[#b4dbdc] rounded-lg shadow-md border border-[#72999b] w-60 sm:w-64 lg:w-72 p-3 cursor-pointer select-none overflow-visible ring-2 ring-[#b4dbdc]/50 ${
+        className={`absolute inset-0 bg-[#b4dbdc] rounded-lg shadow-md border border-[#72999b] w-52 sm:w-56 lg:w-60 p-2.5 cursor-pointer select-none overflow-visible ring-2 ring-[#b4dbdc]/50 ${
           activeTab === "photo" ? "shadow-2xl" : ""
         }`}
       >
         <img
           src="/about.png"
           alt="Alda Amorita Azza"
-          className="w-full h-[360px] object-cover object-bottom border border-white rounded-sm"
+          className="w-full h-[285px] object-cover object-bottom border border-white rounded-sm"
         />
       </motion.div>
 
@@ -293,11 +293,11 @@ function StackedCards() {
         animate={
           activeTab === "others"
             ? { zIndex: 30, rotate: 0, x: 0, y: 0, scale: 1 }
-            : { zIndex: 20, rotate: 1, x: -25, y: 1, scale: 0.97 }
+            : { zIndex: 20, rotate: 2, x: -15, y: 1, scale: 0.97 }
         }
         transition={{ type: "spring", stiffness: 220, damping: 20 }}
         whileHover={activeTab !== "others" ? { rotate: 5, scale: 0.98 } : {}}
-        className={`absolute inset-0 bg-white rounded-lg shadow-md border border-[#0b0d10]/10 w-[17rem] sm:w-72 lg:w-[21rem] p-3 sm:p-4 cursor-pointer select-none overflow-visible ring-2 ring-white/50 ${
+        className={`absolute inset-0 bg-white rounded-lg shadow-md border border-[#0b0d10]/10 w-[15rem] sm:w-[15rem] lg:w-[17rem] p-2.5 sm:p-3 cursor-pointer select-none overflow-visible ring-2 ring-white/50 ${
           activeTab === "others" ? "shadow-2xl" : ""
         }`}
       >
